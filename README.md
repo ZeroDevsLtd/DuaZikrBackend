@@ -1,229 +1,284 @@
 # Dua & Zikr Backend API
 
-A comprehensive Django REST API backend for Islamic duas and zikr applications. This API provides access to a rich collection of Islamic supplications with support for multiple languages and comprehensive metadata.
+A comprehensive Django REST Framework backend API for a Dua and Zikr application, providing multi-language support for Islamic supplications and prayers.
 
-## Features
+## 🌟 Features
 
-- **Multi-language Support**: English, Bengali, Arabic, Urdu, German, Spanish, and Indonesian
-- **Comprehensive Dua Data**: Includes Arabic text, transliterations, translations, explanations, and benefits
-- **Rich Metadata**: Categories, difficulty levels, usage instructions, and references
-- **Audio Support**: Audio file URLs and reciter information
-- **Statistics Tracking**: View counts, favorite counts, and usage statistics
-- **Search & Filtering**: Advanced search capabilities and filtering options
-- **RESTful API**: Clean, well-documented REST endpoints
+- **Multi-language Support**: Full support for 7 languages (English, Bengali, Arabic, Urdu, German, Spanish, Indonesian)
+- **Comprehensive Dua Database**: 15 categories with sample duas
+- **RESTful API**: Clean, well-documented API endpoints
+- **Admin Interface**: Django admin for easy content management
+- **Multi-language Fields**: Titles, translations, explanations, and benefits in all supported languages
+- **Category Management**: Organized dua categories with icons and colors
+- **Search & Filter**: Advanced search and filtering capabilities
+- **Network Accessible**: Configurable for access from mobile devices on the same network
 
-## API Endpoints
+## 🚀 Quick Start
 
-### Main Endpoints
-- `GET /api/getalldua/` - Get all duas with metadata
-- `GET /api/getallcategory/` - Get all categories with metadata
+### Prerequisites
 
-### Individual Dua Endpoints
-- `GET /api/dua/{id}/` - Get a specific dua by ID
-- `POST /api/favorite/{id}/` - Mark a dua as favorite
+- Python 3.9+
+- pip
+- Git
 
-### Category Endpoints
-- `GET /api/category/{slug}/` - Get all duas for a specific category
+### Installation
 
-### Search & Filter Endpoints
-- `GET /api/search/?q={query}` - Search duas by text
-- `GET /api/popular/?limit={number}` - Get popular duas
-- `GET /api/type/{type}/` - Get duas by type (quranic, hadith, traditional, personal)
-- `GET /api/difficulty/{level}/` - Get duas by difficulty (beginner, intermediate, advanced)
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ZeroDevsLtd/DuaZikrBackend.git
+   cd DuaZikrBackend
+   ```
 
-### Information Endpoints
-- `GET /api/info/` - Get API information and statistics
+2. **Create virtual environment**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-## Technology Stack
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- **Backend**: Django 4.2.7
-- **API Framework**: Django REST Framework 3.14.0
-- **Database**: SQLite (can be easily changed to PostgreSQL/MySQL)
-- **CORS**: django-cors-headers for cross-origin requests
-- **Environment**: python-decouple for configuration management
+4. **Set up environment variables**
+   ```bash
+   cp config.env.example config.env
+   # Edit config.env with your configuration
+   ```
 
-## Project Structure
+5. **Run migrations**
+   ```bash
+   python manage.py makemigrations duas
+   python manage.py migrate
+   ```
+
+6. **Populate sample data**
+   ```bash
+   python manage.py populate_sample_data
+   ```
+
+7. **Create admin user**
+   ```bash
+   python manage.py createsuperuser
+   ```
+
+8. **Run the server**
+   ```bash
+   python manage.py runserver 0.0.0.0:8000
+   ```
+
+## 📱 API Endpoints
+
+### Base URL
+```
+http://localhost:8000/api/
+```
+
+### Available Endpoints
+
+#### 1. Get All Duas
+- **URL**: `/getalldua/`
+- **Method**: `GET`
+- **Description**: Returns all duas with complete information including multi-language support
+- **Response**: JSON with metadata and duas array
+
+#### 2. Get All Categories
+- **URL**: `/getallcategory/`
+- **Method**: `GET`
+- **Description**: Returns all categories with multi-language names and descriptions
+- **Response**: JSON with categories array
+
+#### 3. Search Duas
+- **URL**: `/search/`
+- **Method**: `GET`
+- **Parameters**: `q` (search query)
+- **Description**: Search duas by text content
+- **Response**: JSON with matching duas
+
+#### 4. Filter Duas by Category
+- **URL**: `/filter/`
+- **Method**: `GET`
+- **Parameters**: `category` (category slug)
+- **Description**: Filter duas by category
+- **Response**: JSON with filtered duas
+
+#### 5. Get Single Dua
+- **URL**: `/dua/<dua_id>/`
+- **Method**: `GET`
+- **Description**: Get detailed information about a specific dua
+- **Response**: JSON with complete dua information
+
+### Health Check
+- **URL**: `/health/`
+- **Method**: `GET`
+- **Description**: API health status
+- **Response**: Simple status message
+
+## 🌍 Multi-language Support
+
+The API supports the following languages:
+- **English (en)**
+- **Bengali (bn)**
+- **Arabic (ar)**
+- **Urdu (ur)**
+- **German (de)**
+- **Spanish (es)**
+- **Indonesian (id)**
+
+### Multi-language Fields
+Each dua includes:
+- `title`: Title in all supported languages
+- `transliteration`: Arabic text transliteration in all languages
+- `translation`: Meaning in all supported languages
+- `explanation`: Detailed explanation in all languages
+- `benefits`: Benefits and virtues in all languages
+
+## 🗂️ Data Structure
+
+### Dua Object
+```json
+{
+  "id": "dua_001",
+  "type": "quranic",
+  "category_id": 1,
+  "category_name": "Salah",
+  "priority": 1,
+  "tags": ["prayer", "worship", "quran"],
+  "title": {
+    "en": "Sura Fatiha",
+    "bn": "সূরা ফাতিহা",
+    "ar": "سورة الفاتحة",
+    "ur": "سورہ فاتحہ",
+    "de": "Sure Al-Fatiha",
+    "es": "Sura Al-Fatiha",
+    "id": "Surah Al-Fatihah"
+  },
+  "dua_text": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+  "transliteration": { /* multi-language */ },
+  "translation": { /* multi-language */ },
+  "explanation": { /* multi-language */ },
+  "benefits": { /* multi-language */ },
+  "audio": {
+    "reciter": "Abdul Rahman Al-Sudais",
+    "duration": "00:00:15",
+    "url": "https://api.example.com/audio/dua_001.mp3"
+  },
+  "references": {
+    "quran": {"surah": 1, "ayah": 1, "juz": 1},
+    "source": "Quran 1:1"
+  },
+  "usage": {
+    "whenToRecite": ["Before starting any work", "Before eating"],
+    "frequency": "daily"
+  },
+  "statistics": {
+    "viewCount": 0,
+    "favoriteCount": 0,
+    "lastRead": null
+  },
+  "metadata": {
+    "difficulty": "beginner",
+    "estimatedTime": "00:00:30",
+    "relatedDuas": [],
+    "notes": "This is the most important dua to memorize"
+  }
+}
+```
+
+### Category Object
+```json
+{
+  "id": 1,
+  "name": {
+    "en": "Salah",
+    "bn": "নামাজ",
+    "ar": "الصلاة",
+    "ur": "نماز",
+    "de": "Gebet",
+    "es": "Oración",
+    "id": "Sholat"
+  },
+  "slug": "salah",
+  "description": { /* multi-language */ },
+  "icon": "prayer",
+  "color": "#4CAF50",
+  "created_at": "2025-08-15T10:33:33.127281Z",
+  "updated_at": "2025-08-15T10:33:33.127298Z"
+}
+```
+
+## 🏗️ Project Structure
 
 ```
 DuaZikrBackend/
-├── dua_zikr_backend/          # Main project directory
+├── dua_zikr_backend/          # Main Django project
 │   ├── __init__.py
 │   ├── settings.py            # Django settings
 │   ├── urls.py               # Main URL configuration
 │   ├── wsgi.py               # WSGI configuration
 │   └── asgi.py               # ASGI configuration
-├── duas/                      # Main app directory
+├── duas/                      # Main app
 │   ├── __init__.py
 │   ├── admin.py              # Django admin configuration
 │   ├── apps.py               # App configuration
 │   ├── models.py             # Database models
-│   ├── serializers.py        # API serializers
+│   ├── serializers.py        # DRF serializers
 │   ├── views.py              # API views
-│   ├── urls.py               # App URL patterns
-│   └── management/           # Management commands
+│   ├── urls.py               # App URL configuration
+│   ├── tests.py              # Unit tests
+│   └── management/           # Custom management commands
 │       └── commands/
 │           └── populate_sample_data.py
-├── manage.py                  # Django management script
 ├── requirements.txt           # Python dependencies
-└── README.md                 # This file
+├── manage.py                 # Django management script
+├── README.md                 # This file
+├── API_DOCUMENTATION.md      # Detailed API documentation
+└── PROJECT_SUMMARY.md        # Project overview
 ```
 
-## Installation & Setup
-
-### Prerequisites
-- Python 3.8 or higher
-- pip (Python package installer)
-
-### 1. Clone the Repository
-```bash
-git clone <repository-url>
-cd DuaZikrBackend
-```
-
-### 2. Create Virtual Environment
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-### 3. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Run Database Migrations
-```bash
-python manage.py makemigrations
-python manage.py migrate
-```
-
-### 5. Create Superuser (Optional)
-```bash
-python manage.py createsuperuser
-```
-
-### 6. Populate Sample Data
-```bash
-python manage.py populate_sample_data
-```
-
-### 7. Run the Development Server
-```bash
-python manage.py runserver
-```
-
-The API will be available at `http://localhost:8000/api/`
-
-## Database Models
-
-### Category Model
-- Basic information (name, slug, description)
-- Visual properties (icon, color)
-- Timestamps
-
-### Dua Model
-- **Basic Info**: ID, type, category, priority, tags
-- **Arabic Text**: Text, font, size
-- **Transliterations**: Multiple language support
-- **Translations**: Complete translations with explanations and benefits
-- **Audio**: Reciter, duration, URLs
-- **References**: Quran, Hadith, and other sources
-- **Usage**: When to recite, frequency, times
-- **Statistics**: View count, favorite count, last read
-- **Metadata**: Difficulty, estimated time, related duas, notes
-
-### DuaStatistics Model
-- Detailed usage statistics
-- Time tracking and analytics
-
-## Sample API Response
-
-The `getAllDua` endpoint returns data in the following format:
-
-```json
-{
-  "metadata": {
-    "version": "1.0.0",
-    "lastUpdated": "2024-01-15T10:00:00Z",
-    "totalDuas": 5,
-    "supportedLanguages": ["en", "bn", "ar", "ur", "de", "es", "id"],
-    "categories": ["Salah", "Morning", "Evening", "Sleep", "Food & Drink"]
-  },
-  "duas": [
-    {
-      "id": "dua_001",
-      "type": "quranic",
-      "category": {...},
-      "arabic": {...},
-      "transliteration": {...},
-      "translation": {...},
-      "audio": {...},
-      "references": {...},
-      "usage": {...},
-      "statistics": {...},
-      "metadata": {...}
-    }
-  ]
-}
-```
-
-## Configuration
+## 🔧 Configuration
 
 ### Environment Variables
-Create a `.env` file in the project root:
-
+Create a `config.env` file with:
 ```env
 SECRET_KEY=your-secret-key-here
 DEBUG=True
-ALLOWED_HOSTS=localhost,127.0.0.1
+ALLOWED_HOSTS=localhost,127.0.0.1,192.168.50.205
+CORS_ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
 ```
 
-### Database Configuration
-The project uses SQLite by default. To use PostgreSQL or MySQL, update the `DATABASES` setting in `settings.py`.
+### Network Access
+To access the API from mobile devices on the same network:
+1. Update `ALLOWED_HOSTS` in `settings.py` with your local IP
+2. Update `CORS_ALLOWED_ORIGINS` if needed
+3. Run server with: `python manage.py runserver 0.0.0.0:8000`
 
-## Development
+## 👨‍💼 Admin Interface
 
-### Adding New Duas
-1. Use the Django admin interface at `/admin/`
-2. Or create a new management command
-3. Or add directly through the Django shell
+Access the admin interface at `/admin/` to:
+- Manage categories and duas
+- Add/edit multi-language content
+- Monitor usage statistics
+- Manage user accounts
 
-### Adding New Languages
-1. Add new transliteration and translation fields to the Dua model
-2. Update the serializers to include the new language
-3. Update the metadata to include the new language code
+## 📊 Sample Data
 
-### Customizing the API
-- Modify serializers in `duas/serializers.py`
-- Add new views in `duas/views.py`
-- Update URL patterns in `duas/urls.py`
+The project includes sample data for:
+- **15 Categories**: Salah, Morning, Evening, Sleep, Ramadan, Food & Drink, Illness, Ruqyah, Family, Rizq, Gratitude, Purification, Hajj & Umrah, Travel, Nature
+- **10 Sample Duas**: Including Quranic verses and hadith-based supplications
 
-## Testing
+## 🧪 Testing
 
-### Run Tests
+Run tests with:
 ```bash
 python manage.py test
 ```
 
-### Test API Endpoints
-Use tools like:
-- **Postman**: For API testing and development
-- **curl**: For command-line testing
-- **Django REST Framework browsable API**: Available at each endpoint
+## 📝 API Documentation
 
-## Deployment
+For detailed API documentation, see [API_DOCUMENTATION.md](API_DOCUMENTATION.md)
 
-### Production Settings
-1. Set `DEBUG = False`
-2. Use a production database (PostgreSQL/MySQL)
-3. Configure proper CORS settings
-4. Set up static file serving
-5. Use environment variables for sensitive data
-
-### Docker Support
-The project can be easily containerized using Docker and docker-compose.
-
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -231,23 +286,24 @@ The project can be easily containerized using Docker and docker-compose.
 4. Add tests if applicable
 5. Submit a pull request
 
-## License
+## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License.
 
-## Support
+## 🆘 Support
 
 For support and questions:
-- Create an issue in the repository
+- Create an issue on GitHub
 - Contact the development team
-- Check the API documentation
 
-## Acknowledgments
+## 🔄 Updates
 
-- Islamic scholars and sources for authentic dua content
-- Django and Django REST Framework communities
-- Contributors and maintainers
+- **v1.0.0**: Initial release with complete API and multi-language support
+- Multi-language support for both Duas and Categories
+- Comprehensive admin interface
+- Sample data for all categories
+- Network accessibility for mobile devices
 
 ---
 
-**Note**: This API is designed for educational and religious purposes. Please ensure all content is authentic and properly sourced from reliable Islamic references.
+**Built with ❤️ by ZeroDevs Team**
