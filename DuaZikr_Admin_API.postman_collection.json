@@ -1,0 +1,501 @@
+{
+	"info": {
+		"_postman_id": "dua-zikr-admin-api",
+		"name": "Dua & Zikr Admin API",
+		"description": "Complete Postman collection for Dua & Zikr Backend API with admin functionality for managing duas, categories, and user management.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "dua-zikr-admin"
+	},
+	"item": [
+		{
+			"name": "🔐 Authentication",
+			"item": [
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@example.com\",\n  \"password\": \"123\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/login/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "login", ""]
+						},
+						"description": "Login as admin to get authentication token"
+					},
+					"response": []
+				},
+				{
+					"name": "User Registration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"password\": \"testpass123\",\n  \"password_confirm\": \"testpass123\",\n  \"phone\": \"+1234567890\",\n  \"age\": 25,\n  \"gender\": \"M\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/signup/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "signup", ""]
+						},
+						"description": "Register a new user account"
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@example.com\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/forgot-password/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "forgot-password", ""]
+						},
+						"description": "Request password reset link"
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"token\": \"your_reset_token_here\",\n  \"new_password\": \"newpassword123\",\n  \"new_password_confirm\": \"newpassword123\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/reset-password/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "reset-password", ""]
+						},
+						"description": "Reset password using token from email"
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"old_password\": \"123\",\n  \"new_password\": \"newpassword123\",\n  \"new_password_confirm\": \"newpassword123\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/change-password/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "change-password", ""]
+						},
+						"description": "Change user password (requires authentication)"
+					},
+					"response": []
+				},
+				{
+					"name": "User Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{auth_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/auth/logout/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "logout", ""]
+						},
+						"description": "Logout user and invalidate token"
+					},
+					"response": []
+				}
+			],
+			"description": "Authentication endpoints for user management"
+		},
+		{
+			"name": "👑 Admin Dua Management",
+			"item": [
+				{
+					"name": "Create New Dua",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"hadith\",\n  \"category\": 1,\n  \"priority\": 3,\n  \"tags\": [\"protection\", \"daily\", \"hadith\"],\n  \"title_en\": \"Dua for Protection\",\n  \"title_bn\": \"সুরক্ষার জন্য দুআ\",\n  \"title_ar\": \"دعاء للحماية\",\n  \"title_ur\": \"حفاظت کے لیے دعا\",\n  \"title_de\": \"Gebet für Schutz\",\n  \"title_es\": \"Oración para protección\",\n  \"title_id\": \"Doa untuk perlindungan\",\n  \"dua_text\": \"أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ الَّتِي لَا يُجَاوِزُهُنَّ بَرٌّ وَلَا فَاجِرٌ\",\n  \"transliteration_en\": \"A'udhu bi kalimatillahit-tammatil-lati la yujawizuhunna barrun wa la fajir\",\n  \"transliteration_bn\": \"আউযু বি কালিমাতিল্লাহিত-তাম্মাতিল-লাতি লা ইউজাউইজুহুন্না বাররুন ওয়া লা ফাজির\",\n  \"transliteration_ar\": \"أعوذ بكلمات الله التامات التي لا يجوزهن بر ولا فاجر\",\n  \"transliteration_ur\": \"اعوذ بکلمات اللہ التامات التی لا یجوزہن بر ولا فاجر\",\n  \"transliteration_de\": \"A'udhu bi kalimatillahit-tammatil-lati la yujawizuhunna barrun wa la fajir\",\n  \"transliteration_es\": \"A'udhu bi kalimatillahit-tammatil-lati la yujawizuhunna barrun wa la fajir\",\n  \"transliteration_id\": \"A'udhu bi kalimatillahit-tammatil-lati la yujawizuhunna barrun wa la fajir\",\n  \"translation_en\": \"I seek refuge in the perfect words of Allah which neither the upright nor the corrupt can overcome\",\n  \"translation_bn\": \"আমি আল্লাহর নিখুঁত বাক্যগুলোতে আশ্রয় চাইছি যা সৎ বা অসৎ কেউ অতিক্রম করতে পারে না\",\n  \"translation_ar\": \"أعوذ بالكلمات التامات لله التي لا يتجاوزها بر ولا فاجر\",\n  \"translation_ur\": \"میں اللہ کے کامل کلمات میں پناہ مانگتا ہوں جنہیں نیک یا بد کوئی بھی نہیں باندھ سکتا\",\n  \"translation_de\": \"Ich suche Zuflucht in den vollkommenen Worten Allahs, die weder der Rechtschaffene noch der Frevler überwinden kann\",\n  \"translation_es\": \"Me refugio en las palabras perfectas de Alá que ni el justo ni el corrupto pueden superar\",\n  \"translation_id\": \"Saya berlindung dengan kalimat-kalimat Allah yang sempurna yang tidak dapat diatasi oleh orang baik maupun jahat\",\n  \"explanation_en\": \"This dua is recited for protection from all kinds of harm and evil\",\n  \"explanation_bn\": \"এই দুআটি সব ধরনের ক্ষতি ও মন্দ থেকে সুরক্ষার জন্য পাঠ করা হয়\",\n  \"explanation_ar\": \"هذه الدعاء تُقرأ للحماية من جميع أنواع الضرر والشر\",\n  \"explanation_ur\": \"یہ دعا ہر قسم کے نقصان اور برائی سے حفاظت کے لیے پڑھی جاتی ہے\",\n  \"explanation_de\": \"Dieses Gebet wird für den Schutz vor allen Arten von Schaden und Übel rezitiert\",\n  \"explanation_es\": \"Esta oración se recita para protección contra todo tipo de daño y mal\",\n  \"explanation_id\": \"Doa ini dibaca untuk perlindungan dari segala jenis bahaya dan kejahatan\",\n  \"benefits_en\": \"Protection from evil, spiritual shield, divine protection\",\n  \"benefits_bn\": \"মন্দ থেকে সুরক্ষা, আধ্যাত্মিক ঢাল, ঐশ্বরিক সুরক্ষা\",\n  \"benefits_ar\": \"الحماية من الشر، الدرع الروحي، الحماية الإلهية\",\n  \"benefits_ur\": \"برائی سے حفاظت، روحانی ڈھال، الہی حفاظت\",\n  \"benefits_de\": \"Schutz vor Bösem, spiritueller Schild, göttlicher Schutz\",\n  \"benefits_es\": \"Protección contra el mal, escudo espiritual, protección divina\",\n  \"benefits_id\": \"Perlindungan dari kejahatan, perisai spiritual, perlindungan ilahi\",\n  \"reciter\": \"Abdul Rahman Al-Sudais\",\n  \"duration\": \"00:00:20\",\n  \"hadith_book_name\": \"Sahih Muslim\",\n  \"hadith_chapter\": \"Book of Dhikr\",\n  \"hadith_number\": \"2708\",\n  \"when_to_recite\": [\"Morning\", \"Evening\", \"Before sleeping\"],\n  \"frequency\": \"daily\",\n  \"difficulty\": \"beginner\",\n  \"estimated_time\": \"00:00:30\",\n  \"related_duas\": [],\n  \"notes\": \"Highly recommended for daily protection\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create-dua/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "create-dua", ""]
+						},
+						"description": "Create a new dua in the database (Admin only)"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Dua - Simple Template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"quranic\",\n  \"category\": 1,\n  \"priority\": 1,\n  \"tags\": [\"quran\", \"protection\"],\n  \"title_en\": \"Sample Dua Title\",\n  \"title_bn\": \"নমুনা দুআ শিরোনাম\",\n  \"title_ar\": \"عنوان الدعاء النموذجي\",\n  \"title_ur\": \"نمونہ دعا کا عنوان\",\n  \"title_de\": \"Beispiel-Dua-Titel\",\n  \"title_es\": \"Título de Dua de Ejemplo\",\n  \"title_id\": \"Judul Dua Contoh\",\n  \"dua_text\": \"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\",\n  \"transliteration_en\": \"Bismillahir Rahmanir Rahim\",\n  \"transliteration_bn\": \"বিসমিল্লাহির রাহমানির রাহীম\",\n  \"transliteration_ar\": \"بسم الله الرحمن الرحيم\",\n  \"transliteration_ur\": \"بسم اللہ الرحمن الرحیم\",\n  \"transliteration_de\": \"Bismillahir Rahmanir Rahim\",\n  \"transliteration_es\": \"Bismillahir Rahmanir Rahim\",\n  \"transliteration_id\": \"Bismillahir Rahmanir Rahim\",\n  \"translation_en\": \"In the name of Allah, the Most Gracious, the Most Merciful\",\n  \"translation_bn\": \"আল্লাহর নামে, যিনি পরম করুণাময়, অতি দয়ালু\",\n  \"translation_ar\": \"بسم الله الرحمن الرحيم\",\n  \"translation_ur\": \"اللہ کے نام سے جو بڑا مہربان نہایت رحم والا ہے\",\n  \"translation_de\": \"Im Namen Allahs, des Allerbarmers, des Barmherzigen\",\n  \"translation_es\": \"En el nombre de Alá, el Misericordioso, el Compasivo\",\n  \"translation_id\": \"Dengan nama Allah, Yang Maha Pengasih, Maha Penyayang\",\n  \"explanation_en\": \"This is a sample dua explanation\",\n  \"explanation_bn\": \"এটি একটি নমুনা দুআ ব্যাখ্যা\",\n  \"explanation_ar\": \"هذا شرح الدعاء النموذجي\",\n  \"explanation_ur\": \"یہ ایک نمونہ دعا کی وضاحت ہے\",\n  \"explanation_de\": \"Dies ist eine Beispiel-Dua-Erklärung\",\n  \"explanation_es\": \"Esta es una explicación de dua de ejemplo\",\n  \"explanation_id\": \"Ini adalah penjelasan dua contoh\",\n  \"benefits_en\": \"Sample benefits of this dua\",\n  \"benefits_bn\": \"এই দুআর নমুনা সুবিধা\",\n  \"benefits_ar\": \"فوائد الدعاء النموذجي\",\n  \"benefits_ur\": \"اس دعا کے نمونہ فوائد\",\n  \"benefits_de\": \"Beispiel-Vorteile dieser Dua\",\n  \"benefits_es\": \"Beneficios de ejemplo de esta dua\",\n  \"benefits_id\": \"Manfaat contoh dari dua ini\",\n  \"reciter\": \"Abdul Rahman Al-Sudais\",\n  \"duration\": \"00:00:15\",\n  \"hadith_book_name\": \"\",\n  \"hadith_chapter\": \"\",\n  \"hadith_number\": \"\",\n  \"when_to_recite\": [\"Morning\", \"Evening\"],\n  \"frequency\": \"daily\",\n  \"difficulty\": \"beginner\",\n  \"estimated_time\": \"00:00:30\",\n  \"related_duas\": [],\n  \"notes\": \"Sample dua for testing purposes\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create-dua/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "create-dua", ""]
+						},
+						"description": "Simple template for creating a new dua (easier to modify)"
+					},
+					"response": []
+				}
+			],
+			"description": "Admin endpoints for creating and managing duas"
+		},
+		{
+			"name": "🔓 Public API Endpoints",
+			"item": [
+				{
+					"name": "Get All Duas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/getalldua/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "getalldua", ""]
+						},
+						"description": "Get all duas with complete multi-language support (no authentication required)"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/getallcategory/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "getallcategory", ""]
+						},
+						"description": "Get all categories with multi-language names and descriptions"
+					},
+					"response": []
+				},
+				{
+					"name": "Search Duas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/search/?q=bismillah",
+							"host": ["{{base_url}}"],
+							"path": ["api", "search", ""],
+							"query": [
+								{
+									"key": "q",
+									"value": "bismillah"
+								}
+							]
+						},
+						"description": "Search duas by text content"
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Duas by Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/filter/?category=salah",
+							"host": ["{{base_url}}"],
+							"path": ["api", "filter", ""],
+							"query": [
+								{
+									"key": "category",
+									"value": "salah"
+								}
+							]
+						},
+						"description": "Filter duas by category slug"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Dua",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/dua/dua_001/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "dua", "dua_001", ""]
+						},
+						"description": "Get detailed information about a specific dua"
+					},
+					"response": []
+				},
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/health/",
+							"host": ["{{base_url}}"],
+							"path": ["health", ""]
+						},
+						"description": "API health status"
+					},
+					"response": []
+				},
+				{
+					"name": "API Information",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/info/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "info", ""]
+						},
+						"description": "Get detailed API information and statistics"
+					},
+					"response": []
+				}
+			],
+			"description": "Public endpoints accessible without authentication"
+		},
+		{
+			"name": "🔒 Protected User Endpoints",
+			"item": [
+				{
+					"name": "Get User Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{auth_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/auth/profile/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "profile", ""]
+						},
+						"description": "Get current user profile information"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Updated Name\",\n  \"phone\": \"+9876543210\",\n  \"age\": 30,\n  \"gender\": \"M\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/profile/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "profile", ""]
+						},
+						"description": "Update user profile information"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User Info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{auth_token}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/auth/me/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "auth", "me", ""]
+						},
+						"description": "Get current user information"
+					},
+					"response": []
+				}
+			],
+			"description": "Protected endpoints requiring authentication"
+		},
+		{
+			"name": "📚 Sample Dua Templates",
+			"item": [
+				{
+					"name": "Quranic Dua Template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"quranic\",\n  \"category\": 1,\n  \"priority\": 1,\n  \"tags\": [\"quran\", \"protection\", \"daily\"],\n  \"title_en\": \"Quranic Dua Title\",\n  \"title_bn\": \"কুরআনিক দুআ শিরোনাম\",\n  \"title_ar\": \"عنوان الدعاء القرآني\",\n  \"title_ur\": \"قرآنی دعا کا عنوان\",\n  \"title_de\": \"Koranisches Dua-Titel\",\n  \"title_es\": \"Título de Dua Coránico\",\n  \"title_id\": \"Judul Dua Al-Qur'an\",\n  \"dua_text\": \"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\",\n  \"transliteration_en\": \"Bismillahir Rahmanir Rahim\",\n  \"transliteration_bn\": \"বিসমিল্লাহির রাহমানির রাহীম\",\n  \"transliteration_ar\": \"بسم الله الرحمن الرحيم\",\n  \"transliteration_ur\": \"بسم اللہ الرحمن الرحیم\",\n  \"transliteration_de\": \"Bismillahir Rahmanir Rahim\",\n  \"transliteration_es\": \"Bismillahir Rahmanir Rahim\",\n  \"transliteration_id\": \"Bismillahir Rahmanir Rahim\",\n  \"translation_en\": \"In the name of Allah, the Most Gracious, the Most Merciful\",\n  \"translation_bn\": \"আল্লাহর নামে, যিনি পরম করুণাময়, অতি দয়ালু\",\n  \"translation_ar\": \"بسم الله الرحمن الرحيم\",\n  \"translation_ur\": \"اللہ کے نام سے جو بڑا مہربان نہایت رحم والا ہے\",\n  \"translation_de\": \"Im Namen Allahs, des Allerbarmers, des Barmherzigen\",\n  \"translation_es\": \"En el nombre de Alá, el Misericordioso, el Compasivo\",\n  \"translation_id\": \"Dengan nama Allah, Yang Maha Pengasih, Maha Penyayang\",\n  \"explanation_en\": \"This is a Quranic dua explanation\",\n  \"explanation_bn\": \"এটি একটি কুরআনিক দুআ ব্যাখ্যা\",\n  \"explanation_ar\": \"هذا شرح الدعاء القرآني\",\n  \"explanation_ur\": \"یہ ایک قرآنی دعا کی وضاحت ہے\",\n  \"explanation_de\": \"Dies ist eine koranische Dua-Erklärung\",\n  \"explanation_es\": \"Esta es una explicación de dua coránica\",\n  \"explanation_id\": \"Ini adalah penjelasan dua Al-Qur'an\",\n  \"benefits_en\": \"Quranic dua benefits\",\n  \"benefits_bn\": \"কুরআনিক দুআর সুবিধা\",\n  \"benefits_ar\": \"فوائد الدعاء القرآني\",\n  \"benefits_ur\": \"قرآنی دعا کے فوائد\",\n  \"benefits_de\": \"Koranische Dua-Vorteile\",\n  \"benefits_es\": \"Beneficios de dua coránica\",\n  \"benefits_id\": \"Manfaat dua Al-Qur'an\",\n  \"reciter\": \"Abdul Rahman Al-Sudais\",\n  \"duration\": \"00:00:15\",\n  \"hadith_book_name\": \"\",\n  \"hadith_chapter\": \"\",\n  \"hadith_number\": \"\",\n  \"when_to_recite\": [\"Morning\", \"Evening\", \"Before meals\"],\n  \"frequency\": \"daily\",\n  \"difficulty\": \"beginner\",\n  \"estimated_time\": \"00:00:30\",\n  \"related_duas\": [],\n  \"notes\": \"Quranic dua template\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create-dua/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "create-dua", ""]
+						},
+						"description": "Template for creating Quranic duas"
+					},
+					"response": []
+				},
+				{
+					"name": "Hadith Dua Template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token {{auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"hadith\",\n  \"category\": 2,\n  \"priority\": 2,\n  \"tags\": [\"hadith\", \"morning\", \"protection\"],\n  \"title_en\": \"Hadith Dua Title\",\n  \"title_bn\": \"হাদীস দুআ শিরোনাম\",\n  \"title_ar\": \"عنوان الدعاء الحديثي\",\n  \"title_ur\": \"حدیث دعا کا عنوان\",\n  \"title_de\": \"Hadith-Dua-Titel\",\n  \"title_es\": \"Título de Dua de Hadiz\",\n  \"title_id\": \"Judul Dua Hadits\",\n  \"dua_text\": \"أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ\",\n  \"transliteration_en\": \"Asbahna wa asbahal mulku lillah\",\n  \"transliteration_bn\": \"আসবাহনা ওয়া আসবাহাল মুলকু লিল্লাহ\",\n  \"transliteration_ar\": \"أصبحنا وأصبح الملك لله\",\n  \"transliteration_ur\": \"اصبحنا واصبح الملک للہ\",\n  \"transliteration_de\": \"Asbahna wa asbahal mulku lillah\",\n  \"transliteration_es\": \"Asbahna wa asbahal mulku lillah\",\n  \"transliteration_id\": \"Asbahna wa asbahal mulku lillah\",\n  \"translation_en\": \"We have reached the morning and at this very time all sovereignty belongs to Allah\",\n  \"translation_bn\": \"আমরা সকালে পৌঁছেছি এবং এই সময়ে সব সার্বভৌমত্ব আল্লাহর\",\n  \"translation_ar\": \"أصبحنا وأصبح الملك لله\",\n  \"translation_ur\": \"ہم صبح کو پہنچ گئے اور اس وقت تمام بادشاہی اللہ کی ہے\",\n  \"translation_de\": \"Wir haben den Morgen erreicht und zu dieser Zeit gehört alle Souveränität Allah\",\n  \"translation_es\": \"Hemos llegado a la mañana y en este momento toda la soberanía pertenece a Alá\",\n  \"translation_id\": \"Kami telah mencapai pagi dan pada saat ini semua kedaulatan milik Allah\",\n  \"explanation_en\": \"This is a hadith-based dua explanation\",\n  \"explanation_bn\": \"এটি একটি হাদীস-ভিত্তিক দুআ ব্যাখ্যা\",\n  \"explanation_ar\": \"هذا شرح الدعاء الحديثي\",\n  \"explanation_ur\": \"یہ ایک حدیث پر مبنی دعا کی وضاحت ہے\",\n  \"explanation_de\": \"Dies ist eine hadith-basierte Dua-Erklärung\",\n  \"explanation_es\": \"Esta es una explicación de dua basada en hadiz\",\n  \"explanation_id\": \"Ini adalah penjelasan dua berdasarkan hadits\",\n  \"benefits_en\": \"Hadith dua benefits\",\n  \"benefits_bn\": \"হাদীস দুআর সুবিধা\",\n  \"benefits_ar\": \"فوائد الدعاء الحديثي\",\n  \"benefits_ur\": \"حدیث دعا کے فوائد\",\n  \"benefits_de\": \"Hadith-Dua-Vorteile\",\n  \"benefits_es\": \"Beneficios de dua de hadiz\",\n  \"benefits_id\": \"Manfaat dua hadits\",\n  \"reciter\": \"Abdul Rahman Al-Sudais\",\n  \"duration\": \"00:00:10\",\n  \"hadith_book_name\": \"Sahih Bukhari\",\n  \"hadith_chapter\": \"Book of Morning and Evening Supplications\",\n  \"hadith_number\": \"6317\",\n  \"when_to_recite\": [\"Morning\"],\n  \"frequency\": \"daily\",\n  \"difficulty\": \"beginner\",\n  \"estimated_time\": \"00:00:20\",\n  \"related_duas\": [],\n  \"notes\": \"Hadith dua template\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/create-dua/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "create-dua", ""]
+						},
+						"description": "Template for creating Hadith-based duas"
+					},
+					"response": []
+				}
+			],
+			"description": "Pre-configured templates for different types of duas"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Auto-set auth token after login",
+					"if (pm.request.url.path.includes('/api/auth/login/')) {",
+					"    pm.sendRequest({",
+					"        url: pm.request.url,",
+					"        method: 'POST',",
+					"        header: pm.request.headers,",
+					"        body: pm.request.body",
+					"    }, function (err, response) {",
+					"        if (response.code === 200) {",
+					"            const responseJson = response.json();",
+					"            if (responseJson.token) {",
+					"                pm.environment.set('auth_token', responseJson.token);",
+					"                console.log('Auth token automatically set:', responseJson.token.substring(0, 20) + '...');",
+					"            }",
+					"        }",
+					"    });",
+					"}"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "auth_token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

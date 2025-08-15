@@ -25,4 +25,7 @@ urlpatterns = [
     
     # Info endpoint
     path('info/', views.get_api_info, name='get_api_info'),
+
+    # Create Dua endpoint (Admin only)
+    path('create-dua/', views.create_dua, name='create_dua'),
 ]

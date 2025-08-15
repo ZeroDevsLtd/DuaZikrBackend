@@ -1,6 +1,6 @@
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from django.utils import timezone
 from django.db.models import Count, Q
@@ -279,6 +279,29 @@ def mark_dua_as_favorite(request, dua_id):
             {'error': f'An error occurred: {str(e)}'},
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def create_dua(request):
+    """
+    Create a new dua (Admin only)
+    """
+    # Check if user is staff/admin
+    if not request.user.is_staff:
+        return Response({
+            'error': 'Only staff members can create duas'
+        }, status=status.HTTP_403_FORBIDDEN)
+    
+    serializer = DuaSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response({
+            'message': 'Dua created successfully',
+            'dua': serializer.data
+        }, status=status.HTTP_201_CREATED)
+    
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])

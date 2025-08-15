@@ -7,6 +7,8 @@ A comprehensive Django REST Framework backend API for a Dua and Zikr application
 - **Multi-language Support**: Full support for 7 languages (English, Bengali, Arabic, Urdu, German, Spanish, Indonesian)
 - **Comprehensive Dua Database**: 15 categories with sample duas
 - **RESTful API**: Clean, well-documented API endpoints
+- **Public APIs**: All dua and category APIs are publicly accessible without authentication
+- **User Management**: Optional signup, login, password reset, profile management
 - **Admin Interface**: Django admin for easy content management
 - **Multi-language Fields**: Titles, translations, explanations, and benefits in all supported languages
 - **Category Management**: Organized dua categories with icons and colors
@@ -49,6 +51,7 @@ A comprehensive Django REST Framework backend API for a Dua and Zikr application
 5. **Run migrations**
    ```bash
    python manage.py makemigrations duas
+   python manage.py makemigrations authentication
    python manage.py migrate
    ```
 
@@ -67,6 +70,38 @@ A comprehensive Django REST Framework backend API for a Dua and Zikr application
    python manage.py runserver 0.0.0.0:8000
    ```
 
+### API Usage
+
+#### Public APIs (No Authentication Required)
+```bash
+# Get all duas
+curl http://localhost:8000/api/getalldua/
+
+# Get all categories
+curl http://localhost:8000/api/getallcategory/
+
+# Search duas
+curl "http://localhost:8000/api/search/?q=bismillah"
+```
+
+#### User Management APIs
+```bash
+# User registration
+curl -X POST http://localhost:8000/api/auth/signup/ \
+  -H "Content-Type: application/json" \
+  -d '{"name": "John Doe", "email": "john@example.com", "password": "securepass123", "password_confirm": "securepass123"}'
+
+# User login
+curl -X POST http://localhost:8000/api/auth/login/ \
+  -H "Content-Type: application/json" \
+  -d '{"email": "john@example.com", "password": "securepass123"}'
+
+# Forgot password
+curl -X POST http://localhost:8000/api/auth/forgot-password/ \
+  -H "Content-Type: application/json" \
+  -d '{"email": "john@example.com"}'
+```
+
 ## 📱 API Endpoints
 
 ### Base URL
@@ -74,7 +109,7 @@ A comprehensive Django REST Framework backend API for a Dua and Zikr application
 http://localhost:8000/api/
 ```
 
-### Available Endpoints
+### 🔓 Public Endpoints (No Authentication Required)
 
 #### 1. Get All Duas
 - **URL**: `/getalldua/`
@@ -108,11 +143,79 @@ http://localhost:8000/api/
 - **Description**: Get detailed information about a specific dua
 - **Response**: JSON with complete dua information
 
-### Health Check
+#### 6. Health Check
 - **URL**: `/health/`
 - **Method**: `GET`
 - **Description**: API health status
 - **Response**: Simple status message
+
+### 🔐 Authentication Endpoints (User Management)
+
+#### 1. User Registration
+- **URL**: `/auth/signup/`
+- **Method**: `POST`
+- **Required**: `name`, `email`, `password`
+- **Optional**: `phone`, `age`, `gender`
+- **Description**: Create a new user account
+- **Response**: User data and authentication token
+
+#### 2. User Login
+- **URL**: `/auth/login/`
+- **Method**: `POST`
+- **Required**: `email`, `password`
+- **Description**: Authenticate user and get access token
+- **Response**: User data and authentication token
+
+#### 3. Forgot Password
+- **URL**: `/auth/forgot-password/`
+- **Method**: `POST`
+- **Required**: `email`
+- **Description**: Request password reset link
+- **Response**: Success message
+
+#### 4. Reset Password
+- **URL**: `/auth/reset-password/`
+- **Method**: `POST`
+- **Required**: `token`, `new_password`, `new_password_confirm`
+- **Description**: Reset password using token
+- **Response**: Success message
+
+#### 5. Password Reset Page
+- **URL**: `/auth/reset-password-page/?token=<token>`
+- **Method**: `GET`
+- **Description**: User-friendly HTML page for password reset
+- **Response**: HTML form
+
+### 🔒 Protected Endpoints (Authentication Required)
+
+#### 1. User Profile
+- **URL**: `/auth/profile/`
+- **Method**: `GET`, `PUT`, `PATCH`
+- **Headers**: `Authorization: Token <your-token>`
+- **Description**: Get and update user profile
+- **Response**: User profile data
+
+#### 2. User Info
+- **URL**: `/auth/me/`
+- **Method**: `GET`
+- **Headers**: `Authorization: Token <your-token>`
+- **Description**: Get current user information
+- **Response**: Current user data
+
+#### 3. Change Password
+- **URL**: `/auth/change-password/`
+- **Method**: `POST`
+- **Headers**: `Authorization: Token <your-token>`
+- **Required**: `old_password`, `new_password`, `new_password_confirm`
+- **Description**: Change user password
+- **Response**: Success message and new token
+
+#### 4. User Logout
+- **URL**: `/auth/logout/`
+- **Method**: `POST`
+- **Headers**: `Authorization: Token <your-token>`
+- **Description**: Logout user and invalidate token
+- **Response**: Success message
 
 ## 🌍 Multi-language Support
 
