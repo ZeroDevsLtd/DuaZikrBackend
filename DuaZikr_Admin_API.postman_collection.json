@@ -323,6 +323,26 @@
 						"description": "Get detailed API information and statistics"
 					},
 					"response": []
+				},
+				{
+					"name": "Get All Ads",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/getallads/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"getallads",
+								""
+							]
+						},
+						"description": "Get all active advertisements with icons and colors"
+					},
+					"response": []
 				}
 			],
 			"description": "Public endpoints accessible without authentication"
@@ -471,7 +491,7 @@
 					"        url: pm.request.url,",
 					"        method: 'POST',",
 					"        header: pm.request.headers,",
-					"        body: pm.request.body",
+					"        body: pm.request.body,",
 					"    }, function (err, response) {",
 					"        if (response.code === 200) {",
 					"            const responseJson = response.json();",
@@ -481,7 +501,10 @@
 					"            }",
 					"        }",
 					"    });",
-					"}"
+					"}",
+					"",
+					"// CSRF is completely disabled - no tokens needed",
+					"console.log('✅ CSRF disabled - API endpoints work without CSRF tokens');"
 				]
 			}
 		}

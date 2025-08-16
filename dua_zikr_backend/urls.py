@@ -8,6 +8,10 @@ from django.conf.urls.static import static
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
+# CSRF exempt all API endpoints
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
+
 def root_view(request):
     """Root view showing API information and available endpoints"""
     html_content = """
@@ -201,8 +205,14 @@ def root_view(request):
                     
                     <div class="endpoint">
                         <h4><span class="method get">GET</span> <span class="public">Public</span> Get All Categories</h4>
-                        <div class="description">Returns all categories with multi-language names and descriptions</div>
+                        <div class="description">Get all available categories with multi-language support</div>
                         <div class="url">/api/getallcategory/</div>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <h4><span class="method get">GET</span> <span class="public">Public</span> Get All Ads</h4>
+                        <div class="description">Get all active advertisements for the app</div>
+                        <div class="url">/api/getallads/</div>
                     </div>
                     
                     <div class="endpoint">

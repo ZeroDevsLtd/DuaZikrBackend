@@ -287,3 +287,48 @@ class DuaStatistics(models.Model):
 
     def __str__(self):
         return f"Stats for {self.dua.id}"
+
+
+class Ad(models.Model):
+    """
+    Model for managing advertisements
+    """
+    id = models.CharField(max_length=50, primary_key=True)
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    action_text = models.CharField(max_length=100)
+    action_color = models.CharField(max_length=7, default="#2c5530")  # Hex color
+    text_color = models.CharField(max_length=7, default="#495057")   # Hex color
+    title_color = models.CharField(max_length=7, default="#2c5530")  # Hex color
+    link = models.URLField()
+    icon_name = models.CharField(max_length=50, help_text="Ionicons icon name (e.g., star, notifications, share-social)")
+    icon_color = models.CharField(max_length=7, default="#2c5530")  # Hex color
+    is_active = models.BooleanField(default=True)
+    priority = models.IntegerField(default=1)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['priority', 'created_at']
+        verbose_name = 'Advertisement'
+        verbose_name_plural = 'Advertisements'
+
+    def __str__(self):
+        return f"{self.title} (Priority: {self.priority})"
+
+    def to_dict(self):
+        """Convert model to dictionary format matching the API response"""
+        return {
+            "id": self.id,
+            "title": self.title,
+            "text": self.text,
+            "actionText": self.action_text,
+            "actionColor": self.action_color,
+            "textColor": self.text_color,
+            "titleColor": self.title_color,
+            "link": self.link,
+            "iconName": self.icon_name,
+            "iconColor": self.icon_color,
+            "isActive": self.is_active,
+            "priority": self.priority
+        }

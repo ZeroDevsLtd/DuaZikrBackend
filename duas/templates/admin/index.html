@@ -1,0 +1,61 @@
+{% extends "admin/index.html" %}
+{% load i18n %}
+
+{% block content %}
+    {{ block.super }}
+    
+    <div class="module" style="margin-top: 20px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px;">
+        <h2 style="margin: 0 0 15px 0; font-size: 24px;">📢 Quick Access - Advertisement Management</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 20px;">
+            <div style="padding: 15px; background-color: rgba(255,255,255,0.1); border-radius: 6px; text-align: center;">
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">📋 View All Ads</h3>
+                <p style="margin: 0 0 15px 0; opacity: 0.9;">See all your advertisements</p>
+                <a href="{% url 'admin:duas_ad_changelist' %}" class="button" style="background-color: #28a745; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; display: inline-block;">
+                    View Ads
+                </a>
+            </div>
+            
+            <div style="padding: 15px; background-color: rgba(255,255,255,0.1); border-radius: 6px; text-align: center;">
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">➕ Create New Ad</h3>
+                <p style="margin: 0 0 15px 0; opacity: 0.9;">Add a new advertisement</p>
+                <a href="{% url 'admin:duas_ad_add' %}" class="button" style="background-color: #007bff; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; display: inline-block;">
+                    Create Ad
+                </a>
+            </div>
+            
+            <div style="padding: 15px; background-color: rgba(255,255,255,0.1); border-radius: 6px; text-align: center;">
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">📖 Manage Duas</h3>
+                <p style="margin: 0 0 15px 0; opacity: 0.9;">Edit duas and categories</p>
+                <a href="{% url 'admin:duas_dua_changelist' %}" class="button" style="background-color: #6f42c1; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; display: inline-block;">
+                    Manage Duas
+                </a>
+            </div>
+            
+            <div style="padding: 15px; background-color: rgba(255,255,255,0.1); border-radius: 6px; text-align: center;">
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">🏷️ Manage Categories</h3>
+                <p style="margin: 0 0 15px 0; opacity: 0.9;">Edit dua categories</p>
+                <a href="{% url 'admin:duas_category_changelist' %}" class="button" style="background-color: #fd7e14; color: white; padding: 10px 20px; border-radius: 4px; text-decoration: none; display: inline-block;">
+                    Manage Categories
+                </a>
+            </div>
+        </div>
+        
+        <div style="padding: 15px; background-color: rgba(255,255,255,0.1); border-radius: 6px;">
+            <h3 style="margin: 0 0 10px 0; font-size: 18px;">💡 Ad Management Tips</h3>
+            <ul style="margin: 0; padding-left: 20px; opacity: 0.9;">
+                <li>Use <strong>Ionicons</strong> for beautiful ad icons (star, notifications, book, calendar, moon)</li>
+                <li>Set <strong>priority</strong> to control ad display order (1-5 for important, 6-10 for secondary)</li>
+                <li>Use <strong>Islamic colors</strong> for theme consistency (#2c5530, #28a745, #007bff)</li>
+                <li>Test ads with <strong>is_active</strong> toggle before going live</li>
+                <li>Keep titles short and action-oriented for better engagement</li>
+            </ul>
+        </div>
+        
+        <div style="margin-top: 15px; text-align: center;">
+            <a href="https://ionic.io/ionicons" target="_blank" class="button" style="background-color: #ff6b35; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold;">
+                🔍 Browse All Ionicons
+            </a>
+        </div>
+    </div>
+{% endblock %}

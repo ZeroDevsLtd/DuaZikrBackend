@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Dua, DuaStatistics
+from .models import Category, Dua, DuaStatistics, Ad
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -221,3 +221,33 @@ class GetAllCategoryResponseSerializer(serializers.Serializer):
     """Serializer for the getAllCategory API response"""
     metadata = MetadataSerializer()
     categories = CategorySerializer(many=True)
+
+
+class AdSerializer(serializers.ModelSerializer):
+    """Serializer for Ad model"""
+    
+    class Meta:
+        model = Ad
+        fields = [
+            'id', 'title', 'text', 'action_text', 'action_color', 
+            'text_color', 'title_color', 'link', 'icon_name', 'icon_color',
+            'is_active', 'priority'
+        ]
+    
+    def to_representation(self, instance):
+        """Custom representation to match the required JSON format"""
+        data = super().to_representation(instance)
+        return {
+            "id": data['id'],
+            "title": data['title'],
+            "text": data['text'],
+            "actionText": data['action_text'],
+            "actionColor": data['action_color'],
+            "textColor": data['text_color'],
+            "titleColor": data['title_color'],
+            "link": data['link'],
+            "iconName": data['icon_name'],
+            "iconColor": data['icon_color'],
+            "isActive": data['is_active'],
+            "priority": data['priority']
+        }

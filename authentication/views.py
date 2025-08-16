@@ -9,6 +9,9 @@ from django.utils import timezone
 from django.core.mail import send_mail
 from django.conf import settings
 from django.urls import reverse
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 import secrets
 import datetime
 
@@ -18,6 +21,15 @@ from .serializers import (
 )
 from .models import User
 
+# CSRF exemption for all authentication views
+def csrf_exempt_view(view_func):
+    """Decorator to exempt views from CSRF"""
+    def wrapped_view(request, *args, **kwargs):
+        setattr(request, '_dont_enforce_csrf_checks', True)
+        return view_func(request, *args, **kwargs)
+    return wrapped_view
+
+@csrf_exempt_view
 @api_view(['POST'])
 @permission_classes([AllowAny])  # Public signup
 def user_registration(request):
@@ -49,6 +61,7 @@ def user_registration(request):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@csrf_exempt_view
 @api_view(['POST'])
 @permission_classes([AllowAny])  # Public login
 def user_login(request):
@@ -80,6 +93,7 @@ def user_login(request):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@csrf_exempt_view
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])  # Protected logout
 def user_logout(request):
@@ -94,6 +108,7 @@ def user_logout(request):
     except:
         return Response({'message': 'Logout successful'}, status=status.HTTP_200_OK)
 
+@csrf_exempt_view
 @api_view(['POST'])
 @permission_classes([AllowAny])  # Public password reset request
 def password_reset_request(request):
@@ -155,6 +170,7 @@ def password_reset_request(request):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@csrf_exempt_view
 @api_view(['POST'])
 @permission_classes([AllowAny])  # Public password reset confirm
 def password_reset_confirm(request):
@@ -190,6 +206,7 @@ def password_reset_confirm(request):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@method_decorator(csrf_exempt, name='dispatch')
 class UserProfileView(generics.RetrieveUpdateAPIView):
     """
     Get and update user profile
@@ -200,6 +217,7 @@ class UserProfileView(generics.RetrieveUpdateAPIView):
     def get_object(self):
         return self.request.user
 
+@csrf_exempt_view
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])  # Protected change password
 def change_password(request):
@@ -230,6 +248,7 @@ def change_password(request):
     
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@csrf_exempt_view
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])  # Protected user info
 def user_info(request):

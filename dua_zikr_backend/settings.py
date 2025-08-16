@@ -37,7 +37,8 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'dua_zikr_backend.middleware.CsrfExemptMiddleware',  # Custom CSRF exemption middleware
+    # 'django.middleware.csrf.CsrfViewMiddleware',  # Temporarily disabled for API development
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -48,7 +49,7 @@ ROOT_URLCONF = 'dua_zikr_backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'duas' / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -157,3 +158,20 @@ DEFAULT_FROM_EMAIL = 'your-email@gmail.com'  # Change this to your email
 
 # For development, you can use console backend instead
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# CSRF Configuration - Completely disabled for API development
+CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_HTTPONLY = False
+CSRF_USE_SESSIONS = False
+CSRF_COOKIE_NAME = 'csrftoken'
+CSRF_HEADER_NAME = 'HTTP_X_CSRFTOKEN'
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'http://192.168.50.205:8000',
+]
+
+# Additional CSRF exemption
+CSRF_EXEMPT_URLS = [
+    r'^/api/.*$',  # Exempt all API endpoints
+]

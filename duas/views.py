@@ -4,7 +4,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from django.utils import timezone
 from django.db.models import Count, Q
-from .models import Category, Dua
+from .models import Category, Dua, Ad
 from .serializers import (
     DuaSerializer, CategorySerializer, MetadataSerializer,
     GetAllDuaResponseSerializer, GetAllCategoryResponseSerializer
@@ -353,3 +353,38 @@ def get_api_info(request):
             {'error': f'An error occurred: {str(e)}'},
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_all_ads(request):
+    """
+    Get all active advertisements
+    Public endpoint - no authentication required
+    """
+    try:
+        # Get all active ads ordered by priority
+        ads = Ad.objects.filter(is_active=True).order_by('priority', 'created_at')
+        
+        # Serialize the ads
+        ads_data = []
+        for ad in ads:
+            ads_data.append(ad.to_dict())
+        
+        # Prepare response data
+        response_data = {
+            "success": True,
+            "data": {
+                "ads": ads_data,
+                "lastUpdated": timezone.now().isoformat()
+            }
+        }
+        
+        return Response(response_data, status=status.HTTP_200_OK)
+        
+    except Exception as e:
+        return Response({
+            "success": False,
+            "error": "Failed to fetch advertisements",
+            "message": str(e)
+        }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
