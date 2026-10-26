@@ -14,6 +14,19 @@ nightly database backups.
   If DNS is on Cloudflare, set it to **DNS only (grey cloud)** until the certificate is issued.
   Check with `dig +short api.example.com`.
 
+## Option A: deploy from git on the server (recommended)
+
+On the server, as root (the repo is private, so the server needs a GitHub deploy key or token):
+
+```bash
+git clone https://github.com/ZeroDevsLtd/DuaZikrBackend.git /opt/duazikr-api
+bash /opt/duazikr-api/deploy/server-setup.sh api.example.com you@example.com
+bash /opt/duazikr-api/deploy/update-on-server.sh --seed      # first release
+bash /opt/duazikr-api/deploy/update-on-server.sh             # every later release (git pull + build + restart)
+```
+
+Then continue with step 4 below. Option B (steps 2–3) uploads from a computer with rsync instead.
+
 ## 2. Set up the server (once)
 
 ```bash
