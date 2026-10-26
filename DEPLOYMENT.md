@@ -1,5 +1,20 @@
 # Deploying to a VPS
 
+## Checklist for whoever deploys (person or AI assistant)
+
+1. **First release: use Option A below, with `update-on-server.sh --import`** (not `--seed`).
+   `db/data/content.sql` holds the exact content the team prepared.
+2. **Check the server before changing it.** If it already runs other websites, a MySQL/MariaDB server,
+   a firewall, or SSH on a port other than 22, do not run `server-setup.sh` unchanged (it removes the
+   default nginx site, enables ufw for ports 22/80/443 only and installs MariaDB). Add only what this
+   API needs, and ask the owner before touching existing services.
+3. **Admin login:** after `server-setup.sh`, set `ADMIN_USERNAME` and `ADMIN_PASSWORD` in
+   `/opt/duazikr-api/.env` to the values the owner gives you, update `/root/duazikr-credentials.txt`,
+   and restart the service. Never commit them or print them in logs.
+4. **Done means:** `https://<subdomain>/api/getalldua/` returns 34 duas and 16 categories,
+   `https://<subdomain>/admin/` login works, and `npm run smoke -- https://<subdomain>` passes
+   (install dev dependencies first, `npm prune --omit=dev` after). Report back to the owner.
+
 Target: Ubuntu 22.04 or 24.04 VPS (1 vCPU / 1 GB RAM is enough to start), API on a subdomain
 such as `api.example.com`, with HTTPS.
 
