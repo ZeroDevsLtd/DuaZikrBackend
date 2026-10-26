@@ -36,6 +36,6 @@ export const config = {
 if (config.admin.sessionSecret.length < 32) {
   throw new Error('SESSION_SECRET must be at least 32 characters');
 }
-if (isProduction && config.admin.password.length < 12) {
-  throw new Error('ADMIN_PASSWORD must be at least 12 characters in production');
+if (isProduction && config.admin.password.length < 8) {
+  throw new Error('ADMIN_PASSWORD must be at least 8 characters in production');
 }
