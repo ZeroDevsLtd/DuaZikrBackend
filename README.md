@@ -1,412 +1,128 @@
-# Dua & Zikr Backend API
+# Dua & Zikr Backend v2
 
-A comprehensive Django REST Framework backend API for a Dua and Zikr application, providing multi-language support for Islamic supplications and prayers.
+Node.js (TypeScript) + Fastify + MySQL/MariaDB API for the Dua & Zikr app, with a small built-in admin panel.
 
-## 🌟 Features
+It replaces the old Django backend (`../DuaZikrBackend`) and keeps **the same URLs and JSON response shapes**,
+so the current mobile app works by only changing its `API_URL`.
 
-- **Multi-language Support**: Full support for 7 languages (English, Bengali, Arabic, Urdu, German, Spanish, Indonesian)
-- **Comprehensive Dua Database**: 15 categories with sample duas
-- **RESTful API**: Clean, well-documented API endpoints
-- **Public APIs**: All dua and category APIs are publicly accessible without authentication
-- **User Management**: Optional signup, login, password reset, profile management
-- **Admin Interface**: Django admin for easy content management
-- **Multi-language Fields**: Titles, translations, explanations, and benefits in all supported languages
-- **Category Management**: Organized dua categories with icons and colors
-- **Search & Filter**: Advanced search and filtering capabilities
-- **Network Accessible**: Configurable for access from mobile devices on the same network
+## Quick start
 
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Python 3.9+
-- pip
-- Git
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/ZeroDevsLtd/DuaZikrBackend.git
-   cd DuaZikrBackend
-   ```
-
-2. **Create virtual environment**
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Set up environment variables**
-   ```bash
-   cp config.env.example config.env
-   # Edit config.env with your configuration
-   ```
-
-5. **Run migrations**
-   ```bash
-   python manage.py makemigrations duas
-   python manage.py makemigrations authentication
-   python manage.py migrate
-   ```
-
-6. **Populate sample data**
-   ```bash
-   python manage.py populate_sample_data
-   ```
-
-7. **Create admin user**
-   ```bash
-   python manage.py createsuperuser
-   ```
-
-8. **Run the server**
-   ```bash
-   python manage.py runserver 0.0.0.0:8000
-   ```
-
-### API Usage
-
-#### Public APIs (No Authentication Required)
 ```bash
-# Get all duas
-curl http://localhost:8000/api/getalldua/
-
-# Get all categories
-curl http://localhost:8000/api/getallcategory/
-
-# Search duas
-curl "http://localhost:8000/api/search/?q=bismillah"
+npm install
+cp .env.example .env          # then fill in DB credentials, admin login, SESSION_SECRET
+npm run db:setup              # create tables + insert seed content
+npm run dev                   # http://localhost:8000
 ```
 
-#### User Management APIs
-```bash
-# User registration
-curl -X POST http://localhost:8000/api/auth/signup/ \
-  -H "Content-Type: application/json" \
-  -d '{"name": "John Doe", "email": "john@example.com", "password": "securepass123", "password_confirm": "securepass123"}'
+- Admin panel: <http://localhost:8000/admin/>
+- API base URL for the app: `http://<host>:8000/api`
+- Smoke test (server must be running): `npm run smoke`
 
-# User login
-curl -X POST http://localhost:8000/api/auth/login/ \
-  -H "Content-Type: application/json" \
-  -d '{"email": "john@example.com", "password": "securepass123"}'
+Create the database first (MySQL 8 or MariaDB 10.6+):
 
-# Forgot password
-curl -X POST http://localhost:8000/api/auth/forgot-password/ \
-  -H "Content-Type: application/json" \
-  -d '{"email": "john@example.com"}'
+```sql
+CREATE DATABASE dua_zikr_v2 CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'dua_zikr'@'localhost' IDENTIFIED BY '<password>';
+GRANT ALL PRIVILEGES ON dua_zikr_v2.* TO 'dua_zikr'@'localhost';
 ```
 
-## 📱 API Endpoints
+## Scripts
 
-### Base URL
-```
-http://localhost:8000/api/
-```
+| Command | What it does |
+|---|---|
+| `npm run dev` | Start with auto-reload |
+| `npm run build` / `npm start` | Compile to `dist/` and run it (production) |
+| `npm run db:migrate` | Apply new files in `db/migrations/` |
+| `npm run db:seed` | Insert seed content that is missing (never overwrites admin edits) |
+| `npm run db:setup` | Migrate + seed |
+| `npm run seed:build` | Rebuild `db/seed-data/seed.json` from the old DB export and the app's bundled duas |
+| `npm run smoke` | Call every public endpoint and check the shapes the app relies on |
+| `npm run typecheck` | TypeScript check |
 
-### 🔓 Public Endpoints (No Authentication Required)
+## Public API (`/api`)
 
-#### 1. Get All Duas
-- **URL**: `/getalldua/`
-- **Method**: `GET`
-- **Description**: Returns all duas with complete information including multi-language support
-- **Response**: JSON with metadata and duas array
+All paths accept a trailing slash or not. Auth uses the v1 header `Authorization: Token <token>`.
 
-#### 2. Get All Categories
-- **URL**: `/getallcategory/`
-- **Method**: `GET`
-- **Description**: Returns all categories with multi-language names and descriptions
-- **Response**: JSON with categories array
+| Method | Path | Auth | Notes |
+|---|---|---|---|
+| GET | `/api/` and `/api/info/` | – | API info + statistics (the app pings `/api/` to check reachability) |
+| GET | `/api/getalldua/` | – | `{ metadata: { categories, … }, duas }` — what the app syncs |
+| GET | `/api/getallcategory/` | – | Categories + metadata |
+| GET | `/api/getallads` | – | `{ success, data: { ads, lastUpdated } }` |
+| GET | `/api/dua/{id}/` | – | One dua; increments its view count |
+| GET | `/api/category/{slug}/` | – | Duas in a category |
+| GET | `/api/search/?q=` | – | Searches titles, translations, transliteration, Arabic, source |
+| GET | `/api/popular/?limit=` | – | Most viewed |
+| GET | `/api/type/{type}/` | – | `quranic`, `hadith`, `traditional`, `personal` |
+| GET | `/api/difficulty/{level}/` | – | `beginner`, `intermediate`, `advanced` |
+| POST | `/api/favorite/{id}/` | – | Public favorite counter (v1) |
+| POST | `/api/auth/signup/` | – | `name, email, password, password_confirm, phone?, age?, gender? (M/F)` → `{ user, token }` |
+| POST | `/api/auth/login/` | – | `email, password` → `{ user, token }` |
+| POST | `/api/auth/logout/` | token | Revokes the token used |
+| GET | `/api/auth/profile/`, `/api/auth/me/` | token | Current user |
+| PUT/PATCH | `/api/auth/profile/` | token | `name, phone, age, gender` |
+| POST | `/api/auth/change-password/` | token | Signs out other sessions, returns a new token |
+| DELETE | `/api/auth/account/` | token | Body `{ password }`; deletes account + synced data |
+| POST | `/api/device/register/` | optional | Push token: `device_token, platform, app_version, package, locale` |
+| GET | `/api/favorites/` | token | `{ favorites, dua_ids, count }` |
+| PUT | `/api/favorites/` | token | Replace list: `{ dua_ids: [...] }` |
+| POST/DELETE | `/api/favorites/{duaId}/` | token | Add / remove one |
 
-#### 3. Search Duas
-- **URL**: `/search/`
-- **Method**: `GET`
-- **Parameters**: `q` (search query)
-- **Description**: Search duas by text content
-- **Response**: JSON with matching duas
+Other pages: `/delete-account` (web account deletion, required by Google Play), `/health`.
 
-#### 4. Filter Duas by Category
-- **URL**: `/filter/`
-- **Method**: `GET`
-- **Parameters**: `category` (category slug)
-- **Description**: Filter duas by category
-- **Response**: JSON with filtered duas
+Only duas with status **published** are returned by the public API.
 
-#### 5. Get Single Dua
-- **URL**: `/dua/<dua_id>/`
-- **Method**: `GET`
-- **Description**: Get detailed information about a specific dua
-- **Response**: JSON with complete dua information
+### Error format (unchanged from v1)
 
-#### 6. Health Check
-- **URL**: `/health/`
-- **Method**: `GET`
-- **Description**: API health status
-- **Response**: Simple status message
+- Field errors: `{ "email": ["…"], "message": "email: …" }`
+- General: `{ "non_field_errors": ["…"], "message": "…" }`
+- Auth: `401 { "detail": "…" }`
 
-### 🔐 Authentication Endpoints (User Management)
+## Admin panel (`/admin/`)
 
-#### 1. User Registration
-- **URL**: `/auth/signup/`
-- **Method**: `POST`
-- **Required**: `name`, `email`, `password`
-- **Optional**: `phone`, `age`, `gender`
-- **Description**: Create a new user account
-- **Response**: User data and authentication token
+Login with `ADMIN_USERNAME` / `ADMIN_PASSWORD` from `.env` (12-hour signed cookie session).
 
-#### 2. User Login
-- **URL**: `/auth/login/`
-- **Method**: `POST`
-- **Required**: `email`, `password`
-- **Description**: Authenticate user and get access token
-- **Response**: User data and authentication token
+- **Dashboard** — counts, translation coverage per language, most viewed duas
+- **Duas** — search/filter, create, edit, delete; translations per language (en, bn, ar, de + ur, es, id);
+  review workflow: `draft → review → published`, *reviewed by*, authenticity grade, source references
+- **Categories**, **Ads** (with live preview) — create, edit, delete
+- **Users** — list, delete; **Devices** — registered push tokens
+- **API tester** — call any public endpoint; signup/login fills the token automatically; "run all GET endpoints" check
 
-#### 3. Forgot Password
-- **URL**: `/auth/forgot-password/`
-- **Method**: `POST`
-- **Required**: `email`
-- **Description**: Request password reset link
-- **Response**: Success message
+## Data model
 
-#### 4. Reset Password
-- **URL**: `/auth/reset-password/`
-- **Method**: `POST`
-- **Required**: `token`, `new_password`, `new_password_confirm`
-- **Description**: Reset password using token
-- **Response**: Success message
+Translations are stored in `dua_translations` / `category_translations` (one row per language), so adding a
+language needs no schema change: add it to `src/lib/languages.ts`.
+User tokens are stored as SHA-256 hashes; passwords with bcrypt.
 
-#### 5. Password Reset Page
-- **URL**: `/auth/reset-password-page/?token=<token>`
-- **Method**: `GET`
-- **Description**: User-friendly HTML page for password reset
-- **Response**: HTML form
+## Seed content
 
-### 🔒 Protected Endpoints (Authentication Required)
+`db/seed-data/seed.json` is built from:
 
-#### 1. User Profile
-- **URL**: `/auth/profile/`
-- **Method**: `GET`, `PUT`, `PATCH`
-- **Headers**: `Authorization: Token <your-token>`
-- **Description**: Get and update user profile
-- **Response**: User profile data
+1. the old Django database export (`legacy_*.json`): 15 categories, ads, and old duas;
+2. the app's bundled duas (`Dua-Zikr/src/data/duas.ts`) — kept with their app ids (`q1`, `h1`, …) so favorites stay valid.
 
-#### 2. User Info
-- **URL**: `/auth/me/`
-- **Method**: `GET`
-- **Headers**: `Authorization: Token <your-token>`
-- **Description**: Get current user information
-- **Response**: Current user data
+Old duas that duplicated an app dua were dropped, and their extra translations (de, ur, es, id, …) were merged
+into the matching app dua. A new `daily-life` category holds the home/clothing duas. The old "Test Ads" entry was
+dropped and the "Premium Features" ad starts inactive.
 
-#### 3. Change Password
-- **URL**: `/auth/change-password/`
-- **Method**: `POST`
-- **Headers**: `Authorization: Token <your-token>`
-- **Required**: `old_password`, `new_password`, `new_password_confirm`
-- **Description**: Change user password
-- **Response**: Success message and new token
+> **Seeded content is published but not yet scholar-reviewed.** Review each dua in the admin panel
+> and fill in *Reviewed by* and *Authenticity*.
 
-#### 4. User Logout
-- **URL**: `/auth/logout/`
-- **Method**: `POST`
-- **Headers**: `Authorization: Token <your-token>`
-- **Description**: Logout user and invalidate token
-- **Response**: Success message
+## Pointing the mobile app here
 
-## 🌍 Multi-language Support
+Set `expo.extra.API_URL` in the app's `app.json` to this server's `/api` URL, e.g.
+`https://api.example.com/api` (production) or `http://<your-LAN-IP>:8000/api` (local testing on a phone).
+Android release builds block plain `http://`, so production must use HTTPS.
 
-The API supports the following languages:
-- **English (en)**
-- **Bengali (bn)**
-- **Arabic (ar)**
-- **Urdu (ur)**
-- **German (de)**
-- **Spanish (es)**
-- **Indonesian (id)**
+## Deploying
 
-### Multi-language Fields
-Each dua includes:
-- `title`: Title in all supported languages
-- `transliteration`: Arabic text transliteration in all languages
-- `translation`: Meaning in all supported languages
-- `explanation`: Detailed explanation in all languages
-- `benefits`: Benefits and virtues in all languages
+See [DEPLOYMENT.md](DEPLOYMENT.md): one script prepares an Ubuntu VPS (Node, MariaDB, nginx, HTTPS,
+firewall, backups), a second one uploads and releases the code.
 
-## 🗂️ Data Structure
+## Not carried over from v1
 
-### Dua Object
-```json
-{
-  "id": "dua_001",
-  "type": "quranic",
-  "category_id": 1,
-  "category_name": "Salah",
-  "priority": 1,
-  "tags": ["prayer", "worship", "quran"],
-  "title": {
-    "en": "Sura Fatiha",
-    "bn": "সূরা ফাতিহা",
-    "ar": "سورة الفاتحة",
-    "ur": "سورہ فاتحہ",
-    "de": "Sure Al-Fatiha",
-    "es": "Sura Al-Fatiha",
-    "id": "Surah Al-Fatihah"
-  },
-  "dua_text": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
-  "transliteration": { /* multi-language */ },
-  "translation": { /* multi-language */ },
-  "explanation": { /* multi-language */ },
-  "benefits": { /* multi-language */ },
-  "audio": {
-    "reciter": "Abdul Rahman Al-Sudais",
-    "duration": "00:00:15",
-    "url": "https://api.example.com/audio/dua_001.mp3"
-  },
-  "references": {
-    "quran": {"surah": 1, "ayah": 1, "juz": 1},
-    "source": "Quran 1:1"
-  },
-  "usage": {
-    "whenToRecite": ["Before starting any work", "Before eating"],
-    "frequency": "daily"
-  },
-  "statistics": {
-    "viewCount": 0,
-    "favoriteCount": 0,
-    "lastRead": null
-  },
-  "metadata": {
-    "difficulty": "beginner",
-    "estimatedTime": "00:00:30",
-    "relatedDuas": [],
-    "notes": "This is the most important dua to memorize"
-  }
-}
-```
+- Password-reset and email-verification emails (the app does not call them; needs an SMTP provider).
+- `create-dua` API endpoint — use the admin panel instead.
 
-### Category Object
-```json
-{
-  "id": 1,
-  "name": {
-    "en": "Salah",
-    "bn": "নামাজ",
-    "ar": "الصلاة",
-    "ur": "نماز",
-    "de": "Gebet",
-    "es": "Oración",
-    "id": "Sholat"
-  },
-  "slug": "salah",
-  "description": { /* multi-language */ },
-  "icon": "prayer",
-  "color": "#4CAF50",
-  "created_at": "2025-08-15T10:33:33.127281Z",
-  "updated_at": "2025-08-15T10:33:33.127298Z"
-}
-```
-
-## 🏗️ Project Structure
-
-```
-DuaZikrBackend/
-├── dua_zikr_backend/          # Main Django project
-│   ├── __init__.py
-│   ├── settings.py            # Django settings
-│   ├── urls.py               # Main URL configuration
-│   ├── wsgi.py               # WSGI configuration
-│   └── asgi.py               # ASGI configuration
-├── duas/                      # Main app
-│   ├── __init__.py
-│   ├── admin.py              # Django admin configuration
-│   ├── apps.py               # App configuration
-│   ├── models.py             # Database models
-│   ├── serializers.py        # DRF serializers
-│   ├── views.py              # API views
-│   ├── urls.py               # App URL configuration
-│   ├── tests.py              # Unit tests
-│   └── management/           # Custom management commands
-│       └── commands/
-│           └── populate_sample_data.py
-├── requirements.txt           # Python dependencies
-├── manage.py                 # Django management script
-├── README.md                 # This file
-├── API_DOCUMENTATION.md      # Detailed API documentation
-└── PROJECT_SUMMARY.md        # Project overview
-```
-
-## 🔧 Configuration
-
-### Environment Variables
-Create a `config.env` file with:
-```env
-SECRET_KEY=your-secret-key-here
-DEBUG=True
-ALLOWED_HOSTS=localhost,127.0.0.1,192.168.50.205
-CORS_ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
-```
-
-### Network Access
-To access the API from mobile devices on the same network:
-1. Update `ALLOWED_HOSTS` in `settings.py` with your local IP
-2. Update `CORS_ALLOWED_ORIGINS` if needed
-3. Run server with: `python manage.py runserver 0.0.0.0:8000`
-
-## 👨‍💼 Admin Interface
-
-Access the admin interface at `/admin/` to:
-- Manage categories and duas
-- Add/edit multi-language content
-- Monitor usage statistics
-- Manage user accounts
-
-## 📊 Sample Data
-
-The project includes sample data for:
-- **15 Categories**: Salah, Morning, Evening, Sleep, Ramadan, Food & Drink, Illness, Ruqyah, Family, Rizq, Gratitude, Purification, Hajj & Umrah, Travel, Nature
-- **10 Sample Duas**: Including Quranic verses and hadith-based supplications
-
-## 🧪 Testing
-
-Run tests with:
-```bash
-python manage.py test
-```
-
-## 📝 API Documentation
-
-For detailed API documentation, see [API_DOCUMENTATION.md](API_DOCUMENTATION.md)
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🆘 Support
-
-For support and questions:
-- Create an issue on GitHub
-- Contact the development team
-
-## 🔄 Updates
-
-- **v1.0.0**: Initial release with complete API and multi-language support
-- Multi-language support for both Duas and Categories
-- Comprehensive admin interface
-- Sample data for all categories
-- Network accessibility for mobile devices
-
----
-
-**Built with ❤️ by ZeroDevs Team**
+The old project's docs are kept in `legacy/` for reference.

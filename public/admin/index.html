@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Dua Zikr Admin</title>
+  <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+  <div id="login-view" class="login" hidden>
+    <form id="login-form" class="card login-card">
+      <h1>Dua &amp; Zikr Admin</h1>
+      <p class="muted">Sign in with the admin credentials from the server's <code>.env</code>.</p>
+      <label>Username <input name="username" autocomplete="username" required></label>
+      <label>Password <input name="password" type="password" autocomplete="current-password" required></label>
+      <p id="login-error" class="error" hidden></p>
+      <button class="btn primary" type="submit">Sign in</button>
+    </form>
+  </div>
+
+  <div id="app-view" class="shell" hidden>
+    <aside class="sidebar">
+      <div class="brand">Dua &amp; Zikr <span>Admin</span></div>
+      <nav id="nav">
+        <a href="#dashboard" data-view="dashboard">Dashboard</a>
+        <a href="#duas" data-view="duas">Duas</a>
+        <a href="#categories" data-view="categories">Categories</a>
+        <a href="#ads" data-view="ads">Ads</a>
+        <a href="#users" data-view="users">Users</a>
+        <a href="#devices" data-view="devices">Devices</a>
+        <a href="#tester" data-view="tester">API tester</a>
+      </nav>
+      <div class="sidebar-foot">
+        <span id="whoami" class="muted"></span>
+        <button id="logout" class="btn ghost small" type="button">Sign out</button>
+      </div>
+    </aside>
+    <main id="main" class="main"></main>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="/admin/admin.js"></script>
+</body>
+</html>

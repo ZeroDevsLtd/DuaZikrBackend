@@ -1,0 +1,1794 @@
+{
+  "generatedAt": "2026-10-25T18:31:47.508Z",
+  "categories": [
+    {
+      "slug": "salah",
+      "icon": "time",
+      "color": "#4CAF50",
+      "sort_order": 1,
+      "translations": {
+        "en": {
+          "name": "Salah",
+          "description": "Prayers and worship related duas"
+        },
+        "bn": {
+          "name": "নামাজ",
+          "description": "নামাজ ও ইবাদত সংক্রান্ত দুআ"
+        },
+        "ar": {
+          "name": "الصلاة",
+          "description": "أدعية متعلقة بالصلاة والعبادة"
+        },
+        "de": {
+          "name": "Gebet",
+          "description": "Gebete und Anbetung bezogene Duas"
+        },
+        "ur": {
+          "name": "نماز",
+          "description": "نماز اور عبادت سے متعلق دعائیں"
+        },
+        "es": {
+          "name": "Oración",
+          "description": "Duas relacionadas con oraciones y adoración"
+        },
+        "id": {
+          "name": "Sholat",
+          "description": "Doa terkait sholat dan ibadah"
+        }
+      }
+    },
+    {
+      "slug": "morning",
+      "icon": "sunny",
+      "color": "#FF9800",
+      "sort_order": 2,
+      "translations": {
+        "en": {
+          "name": "Morning",
+          "description": "Morning duas and supplications"
+        },
+        "bn": {
+          "name": "সকাল",
+          "description": "সকালের দুআ ও প্রার্থনা"
+        },
+        "ar": {
+          "name": "الصباح",
+          "description": "أدعية ودعوات الصباح"
+        },
+        "de": {
+          "name": "Morgen",
+          "description": "Morgen-Duas und Bittgebete"
+        },
+        "ur": {
+          "name": "صبح",
+          "description": "صبح کی دعائیں اور مناجات"
+        },
+        "es": {
+          "name": "Mañana",
+          "description": "Duas y súplicas matutinas"
+        },
+        "id": {
+          "name": "Pagi",
+          "description": "Doa dan permohonan pagi"
+        }
+      }
+    },
+    {
+      "slug": "evening",
+      "icon": "moon",
+      "color": "#9C27B0",
+      "sort_order": 3,
+      "translations": {
+        "en": {
+          "name": "Evening",
+          "description": "Evening duas and supplications"
+        },
+        "bn": {
+          "name": "সন্ধ্যা",
+          "description": "সন্ধ্যার দুআ ও প্রার্থনা"
+        },
+        "ar": {
+          "name": "المساء",
+          "description": "أدعية ودعوات المساء"
+        },
+        "de": {
+          "name": "Abend",
+          "description": "Abend-Duas und Bittgebete"
+        },
+        "ur": {
+          "name": "شام",
+          "description": "شام کی دعائیں اور مناجات"
+        },
+        "es": {
+          "name": "Tarde",
+          "description": "Duas y súplicas vespertinas"
+        },
+        "id": {
+          "name": "Sore",
+          "description": "Doa dan permohonan sore"
+        }
+      }
+    },
+    {
+      "slug": "sleep",
+      "icon": "bed",
+      "color": "#2196F3",
+      "sort_order": 4,
+      "translations": {
+        "en": {
+          "name": "Sleep",
+          "description": "Duas before sleeping"
+        },
+        "bn": {
+          "name": "ঘুম",
+          "description": "ঘুমানোর আগের দুআ"
+        },
+        "ar": {
+          "name": "النوم",
+          "description": "أدعية قبل النوم"
+        },
+        "de": {
+          "name": "Schlaf",
+          "description": "Duas vor dem Schlafen"
+        },
+        "ur": {
+          "name": "نیند",
+          "description": "سونے سے پہلے کی دعائیں"
+        },
+        "es": {
+          "name": "Sueño",
+          "description": "Duas antes de dormir"
+        },
+        "id": {
+          "name": "Tidur",
+          "description": "Doa sebelum tidur"
+        }
+      }
+    },
+    {
+      "slug": "ramadan",
+      "icon": "star",
+      "color": "#FF5722",
+      "sort_order": 5,
+      "translations": {
+        "en": {
+          "name": "Ramadan",
+          "description": "Special duas for Ramadan"
+        },
+        "bn": {
+          "name": "রমজান",
+          "description": "রমজানের বিশেষ দুআ"
+        },
+        "ar": {
+          "name": "رمضان",
+          "description": "أدعية خاصة لرمضان"
+        },
+        "de": {
+          "name": "Ramadan",
+          "description": "Besondere Duas für den Ramadan"
+        },
+        "ur": {
+          "name": "رمضان",
+          "description": "رمضان کی خاص دعائیں"
+        },
+        "es": {
+          "name": "Ramadán",
+          "description": "Duas especiales para Ramadán"
+        },
+        "id": {
+          "name": "Ramadhan",
+          "description": "Doa khusus untuk Ramadhan"
+        }
+      }
+    },
+    {
+      "slug": "food-drink",
+      "icon": "restaurant",
+      "color": "#795548",
+      "sort_order": 6,
+      "translations": {
+        "en": {
+          "name": "Food & Drink",
+          "description": "Duas before and after eating"
+        },
+        "bn": {
+          "name": "খাদ্য ও পানীয়",
+          "description": "খাওয়ার আগে ও পরে দুআ"
+        },
+        "ar": {
+          "name": "الطعام والشراب",
+          "description": "أدعية قبل وبعد الأكل"
+        },
+        "de": {
+          "name": "Essen & Trinken",
+          "description": "Duas vor und nach dem Essen"
+        },
+        "ur": {
+          "name": "کھانا اور پینا",
+          "description": "کھانے سے پہلے اور بعد کی دعائیں"
+        },
+        "es": {
+          "name": "Comida y Bebida",
+          "description": "Duas antes y después de comer"
+        },
+        "id": {
+          "name": "Makanan & Minuman",
+          "description": "Doa sebelum dan sesudah makan"
+        }
+      }
+    },
+    {
+      "slug": "illness",
+      "icon": "medical",
+      "color": "#F44336",
+      "sort_order": 7,
+      "translations": {
+        "en": {
+          "name": "Illness",
+          "description": "Duas for healing and health"
+        },
+        "bn": {
+          "name": "রোগ",
+          "description": "সুস্থতা ও স্বাস্থ্যের জন্য দুআ"
+        },
+        "ar": {
+          "name": "المرض",
+          "description": "أدعية للشفاء والصحة"
+        },
+        "de": {
+          "name": "Krankheit",
+          "description": "Duas für Heilung und Gesundheit"
+        },
+        "ur": {
+          "name": "بیماری",
+          "description": "شفا اور صحت کے لیے دعائیں"
+        },
+        "es": {
+          "name": "Enfermedad",
+          "description": "Duas para la curación y la salud"
+        },
+        "id": {
+          "name": "Penyakit",
+          "description": "Doa untuk kesembuhan dan kesehatan"
+        }
+      }
+    },
+    {
+      "slug": "ruqyah",
+      "icon": "shield-checkmark",
+      "color": "#607D8B",
+      "sort_order": 8,
+      "translations": {
+        "en": {
+          "name": "Ruqyah",
+          "description": "Protective duas and healing"
+        },
+        "bn": {
+          "name": "রুকইয়া",
+          "description": "সুরক্ষামূলক দুআ ও নিরাময়"
+        },
+        "ar": {
+          "name": "الرقية",
+          "description": "أدعية الحماية والشفاء"
+        },
+        "de": {
+          "name": "Ruqyah",
+          "description": "Schutz-Duas und Heilung"
+        },
+        "ur": {
+          "name": "رقیه",
+          "description": "حفاظتی دعائیں اور شفا"
+        },
+        "es": {
+          "name": "Ruqyah",
+          "description": "Duas protectoras y curación"
+        },
+        "id": {
+          "name": "Ruqyah",
+          "description": "Doa perlindungan dan penyembuhan"
+        }
+      }
+    },
+    {
+      "slug": "family",
+      "icon": "people",
+      "color": "#E91E63",
+      "sort_order": 9,
+      "translations": {
+        "en": {
+          "name": "Family",
+          "description": "Family and relationship duas"
+        },
+        "bn": {
+          "name": "পরিবার",
+          "description": "পরিবার ও সম্পর্কের দুআ"
+        },
+        "ar": {
+          "name": "الأسرة",
+          "description": "أدعية للأسرة والعلاقات"
+        },
+        "de": {
+          "name": "Familie",
+          "description": "Familien- und Beziehungs-Duas"
+        },
+        "ur": {
+          "name": "خاندان",
+          "description": "خاندان اور تعلقات کی دعائیں"
+        },
+        "es": {
+          "name": "Familia",
+          "description": "Duas para la familia y relaciones"
+        },
+        "id": {
+          "name": "Keluarga",
+          "description": "Doa untuk keluarga dan hubungan"
+        }
+      }
+    },
+    {
+      "slug": "rizq",
+      "icon": "wallet",
+      "color": "#FFC107",
+      "sort_order": 10,
+      "translations": {
+        "en": {
+          "name": "Rizq",
+          "description": "Duas for sustenance and wealth"
+        },
+        "bn": {
+          "name": "রিজিক",
+          "description": "জীবিকা ও সম্পদের জন্য দুআ"
+        },
+        "ar": {
+          "name": "الرزق",
+          "description": "أدعية للرزق والثروة"
+        },
+        "de": {
+          "name": "Versorgung",
+          "description": "Duas für Versorgung und Wohlstand"
+        },
+        "ur": {
+          "name": "رزق",
+          "description": "رزق اور دولت کے لیے دعائیں"
+        },
+        "es": {
+          "name": "Sustento",
+          "description": "Duas para el sustento y la riqueza"
+        },
+        "id": {
+          "name": "Rezeki",
+          "description": "Doa untuk rezeki dan kekayaan"
+        }
+      }
+    },
+    {
+      "slug": "gratitude",
+      "icon": "heart",
+      "color": "#FF5722",
+      "sort_order": 11,
+      "translations": {
+        "en": {
+          "name": "Gratitude",
+          "description": "Duas of thankfulness"
+        },
+        "bn": {
+          "name": "কৃতজ্ঞতা",
+          "description": "কৃতজ্ঞতার দুআ"
+        },
+        "ar": {
+          "name": "الشكر",
+          "description": "أدعية الشكر"
+        },
+        "de": {
+          "name": "Dankbarkeit",
+          "description": "Dankbarkeits-Duas"
+        },
+        "ur": {
+          "name": "شکرگزاری",
+          "description": "شکرگزاری کی دعائیں"
+        },
+        "es": {
+          "name": "Gratitud",
+          "description": "Duas de agradecimiento"
+        },
+        "id": {
+          "name": "Syukur",
+          "description": "Doa syukur"
+        }
+      }
+    },
+    {
+      "slug": "purification",
+      "icon": "water",
+      "color": "#00BCD4",
+      "sort_order": 12,
+      "translations": {
+        "en": {
+          "name": "Purification",
+          "description": "Duas for spiritual cleansing"
+        },
+        "bn": {
+          "name": "পবিত্রতা",
+          "description": "আধ্যাত্মিক পবিত্রতার জন্য দুআ"
+        },
+        "ar": {
+          "name": "الطهارة",
+          "description": "أدعية للتطهير الروحي"
+        },
+        "de": {
+          "name": "Reinigung",
+          "description": "Duas für spirituelle Reinigung"
+        },
+        "ur": {
+          "name": "پاکیزگی",
+          "description": "روحانی پاکیزگی کے لیے دعائیں"
+        },
+        "es": {
+          "name": "Purificación",
+          "description": "Duas para la purificación espiritual"
+        },
+        "id": {
+          "name": "Pembersihan",
+          "description": "Doa untuk pembersihan spiritual"
+        }
+      }
+    },
+    {
+      "slug": "hajj-umrah",
+      "icon": "location",
+      "color": "#8BC34A",
+      "sort_order": 13,
+      "translations": {
+        "en": {
+          "name": "Hajj & Umrah",
+          "description": "Duas for pilgrimage"
+        },
+        "bn": {
+          "name": "হজ ও ওমরা",
+          "description": "তীর্থযাত্রার জন্য দুআ"
+        },
+        "ar": {
+          "name": "الحج والعمرة",
+          "description": "أدعية للحج والعمرة"
+        },
+        "de": {
+          "name": "Hajj & Umrah",
+          "description": "Duas für die Pilgerfahrt"
+        },
+        "ur": {
+          "name": "حج اور عمرہ",
+          "description": "حج اور عمرہ کے لیے دعائیں"
+        },
+        "es": {
+          "name": "Hajj y Umrah",
+          "description": "Duas para la peregrinación"
+        },
+        "id": {
+          "name": "Haji & Umrah",
+          "description": "Doa untuk haji dan umrah"
+        }
+      }
+    },
+    {
+      "slug": "travel",
+      "icon": "airplane",
+      "color": "#FF9800",
+      "sort_order": 14,
+      "translations": {
+        "en": {
+          "name": "Travel",
+          "description": "Travel and journey duas"
+        },
+        "bn": {
+          "name": "ভ্রমণ",
+          "description": "ভ্রমণ ও যাত্রার দুআ"
+        },
+        "ar": {
+          "name": "السفر",
+          "description": "أدعية للسفر والرحلات"
+        },
+        "de": {
+          "name": "Reise",
+          "description": "Reise- und Reise-Duas"
+        },
+        "ur": {
+          "name": "سفر",
+          "description": "سفر اور سفر کی دعائیں"
+        },
+        "es": {
+          "name": "Viaje",
+          "description": "Duas para viajes y travesías"
+        },
+        "id": {
+          "name": "Perjalanan",
+          "description": "Doa untuk perjalanan dan perjalanan"
+        }
+      }
+    },
+    {
+      "slug": "nature",
+      "icon": "leaf",
+      "color": "#4CAF50",
+      "sort_order": 15,
+      "translations": {
+        "en": {
+          "name": "Nature",
+          "description": "Duas related to natural phenomena"
+        },
+        "bn": {
+          "name": "প্রকৃতি",
+          "description": "প্রাকৃতিক ঘটনার সাথে সম্পর্কিত দুআ"
+        },
+        "ar": {
+          "name": "الطبيعة",
+          "description": "أدعية متعلقة بالظواهر الطبيعية"
+        },
+        "de": {
+          "name": "Natur",
+          "description": "Duas bezogen auf Naturphänomene"
+        },
+        "ur": {
+          "name": "فطرت",
+          "description": "قدرتی مظاہر سے متعلق دعائیں"
+        },
+        "es": {
+          "name": "Naturaleza",
+          "description": "Duas relacionadas con fenómenos naturales"
+        },
+        "id": {
+          "name": "Alam",
+          "description": "Doa terkait fenomena alam"
+        }
+      }
+    },
+    {
+      "slug": "daily-life",
+      "icon": "home",
+      "color": "#3F51B5",
+      "translations": {
+        "en": {
+          "name": "Daily Life",
+          "description": "Duas for everyday moments"
+        },
+        "bn": {
+          "name": "দৈনন্দিন জীবন",
+          "description": "দৈনন্দিন মুহূর্তের দোয়া"
+        },
+        "ar": {
+          "name": "الحياة اليومية",
+          "description": "أدعية للحياة اليومية"
+        },
+        "de": {
+          "name": "Alltag",
+          "description": "Bittgebete für den Alltag"
+        }
+      },
+      "sort_order": 16
+    }
+  ],
+  "duas": [
+    {
+      "id": "q1",
+      "type": "quranic",
+      "category_slug": "ruqyah",
+      "arabic_text": "اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",
+      "source": "Quran 2:255",
+      "quran_surah": 2,
+      "quran_ayah": 255,
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Ayat Al-Kursi",
+          "transliteration": "Allahu la ilaha illa huwal-hayyul-qayyum. La ta'khudhuhu sinatuw-wa la nawm. Lahu ma fis-samawati wa ma fil-ard. Man dhal-ladhi yashfa'u 'indahu illa bi-idhnih. Ya'lamu ma bayna aydeehim wa ma khalfahum. Wa la yuhituna bi-shay'im-min 'ilmihi illa bima sha'a. Wasi'a kursiyyuhus-samawati wal-ard. Wa la ya'uduhu hifdhuhuma. Wa huwal-'aliyyul-'adheem.",
+          "translation": "Allah - there is no deity except Him, the Ever-Living, the Self-Sustaining. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the earth. Who is it that can intercede with Him except by His permission? He knows what is [presently] before them and what will be after them, and they encompass not a thing of His knowledge except for what He wills. His Kursi extends over the heavens and the earth, and their preservation tires Him not. And He is the Most High, the Most Great.",
+          "benefits": "Ayat Al-Kursi is the greatest verse in the Quran. It provides protection from evil, brings blessings, and is recommended to be recited for protection throughout the day and night.",
+          "explanation": ""
+        },
+        "bn": {
+          "title": "আয়াতুল কুরসী",
+          "transliteration": "আল্লাহু লা ইলাহা ইল্লা হুয়াল-হাইয়্যুল-কাইয়্যুম। লা তা'খুযুহু সিনাতুও-ওয়া লা নাউম। লাহু মা ফিস-সামাওয়াতি ওয়া মা ফিল-আর্দ। মান যাল-লাযি ইয়াশফা'উ 'ইন্দাহু ইল্লা বি-ইযনিহ। ইয়া'লামু মা বায়না আইদিহিম ওয়া মা খালফাহুম। ওয়া লা ইউহিতুনা বি-শাই'ইম-মিন 'ইলমিহি ইল্লা বিমা শা'আ। ওয়াসি'আ কুরসিয়্যুহুস-সামাওয়াতি ওয়াল-আর্দ। ওয়া লা ইয়া'উদুহু হিফযুহুমা। ওয়া হুয়াল-'আলিয়্যুল-'আযম।",
+          "translation": "আল্লাহ - তিনি ছাড়া কোন ইলাহ নেই, তিনি চিরঞ্জীব, স্বয়ংসম্পূর্ণ। তাঁকে তন্দ্রা বা নিদ্রা স্পর্শ করে না। আকাশমণ্ডলী ও পৃথিবীতে যা কিছু আছে সবই তাঁর। কে এমন আছে যে তাঁর অনুমতি ছাড়া তাঁর কাছে সুপারিশ করতে পারে? তিনি জানেন তাদের সামনে যা আছে এবং তাদের পিছনে যা আছে। তারা তাঁর জ্ঞানের কোন বিষয়েই পরিবেষ্টন করতে পারে না, তিনি যা ইচ্ছা করেন তা ছাড়া। তাঁর কুরসী আকাশমণ্ডলী ও পৃথিবী পরিবেষ্টন করে আছে। আর এ দুটির সংরক্ষণ তাঁকে ক্লান্ত করে না। তিনি সর্বোচ্চ, সর্বশ্রেষ্ঠ।",
+          "benefits": "আয়াতুল কুরসী কুরআনের সর্বশ্রেষ্ঠ আয়াত। এটি মন্দ থেকে সুরক্ষা দেয়, বরকত আনে এবং দিনরাত সুরক্ষার জন্য পাঠ করার পরামর্শ দেওয়া হয়।",
+          "explanation": ""
+        },
+        "ar": {
+          "title": "آية الكرسي",
+          "transliteration": "Allahu la ilaha illa huwal-hayyul-qayyum. La ta'khudhuhu sinatuw-wa la nawm. Lahu ma fis-samawati wa ma fil-ard. Man dhal-ladhi yashfa'u 'indahu illa bi-idhnih. Ya'lamu ma bayna aydeehim wa ma khalfahum. Wa la yuhituna bi-shay'im-min 'ilmihi illa bima sha'a. Wasi'a kursiyyuhus-samawati wal-ard. Wa la ya'uduhu hifdhuhuma. Wa huwal-'aliyyul-'adheem.",
+          "translation": "الله لا إله إلا هو الحي القيوم لا تأخذه سنة ولا نوم له ما في السماوات وما في الأرض من ذا الذي يشفع عنده إلا بإذنه يعلم ما بين أيديهم وما خلفهم ولا يحيطون بشيء من علمه إلا بما شاء وسع كرسيه السماوات والأرض ولا يؤوده حفظهما وهو العلي العظيم",
+          "benefits": "آية الكرسي هي أعظم آية في القرآن. توفر الحماية من الشر، تجلب البركات، ويوصى بقراءتها للحماية طوال النهار والليل.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "q2",
+      "type": "quranic",
+      "category_slug": "salah",
+      "arabic_text": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿٢﴾ الرَّحْمَٰنِ الرَّحِيمِ ﴿٣﴾ مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٥﴾ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٦﴾ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٧﴾",
+      "source": "Quran 1:1-7",
+      "quran_surah": 1,
+      "quran_ayah": 1,
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Surah Al-Fatiha",
+          "transliteration": "Bismillahi ar-Rahmani ar-Raheem. Alhamdu lillahi rabbil-'alameen. Ar-Rahmani ar-Raheem. Maliki yawmid-deen. Iyyaka na'budu wa iyyaka nasta'een. Ihdinas-siratal-mustaqeem. Siratal-ladheena an'amta 'alayhim ghayril-maghdoobi 'alayhim wa lad-dalleen.",
+          "translation": "In the name of Allah, the Most Gracious, the Most Merciful. All praise is due to Allah, Lord of the worlds. The Most Gracious, the Most Merciful. Master of the Day of Judgment. It is You we worship and You we ask for help. Guide us to the straight path. The path of those upon whom You have bestowed favor, not of those who have evoked [Your] anger or of those who are astray.",
+          "benefits": "Surah Al-Fatiha is the opening chapter of the Quran and is essential for every prayer. It contains the essence of the Quran and is a powerful dua for guidance and blessings.",
+          "explanation": ""
+        },
+        "bn": {
+          "title": "সূরা আল-ফাতিহা",
+          "transliteration": "বিসমিল্লাহি আর-রাহমানি আর-রাহীম। আলহামদু লিল্লাহি রাব্বিল-'আলামীন। আর-রাহমানি আর-রাহীম। মালিকি ইয়াওমিদ-দীন। ইয়্যাকা না'বুদু ওয়া ইয়্যাকা নাসতাঈন। ইহদিনাস-সিরাতাল-মুসতাকীম। সিরাতাল-লাযীনা আন'আমতা 'আলাইহিম গাইরিল-মাগদূবি 'আলাইহিম ওয়া লাদ-দাল্লীন।",
+          "translation": "পরম করুণাময় অসীম দয়াময় আল্লাহর নামে। সকল প্রশংসা আল্লাহর জন্য, যিনি সকল সৃষ্টি জগতের পালনকর্তা। পরম করুণাময় অসীম দয়াময়। বিচারের দিনের মালিক। আমরা একমাত্র তোমারই ইবাদত করি এবং একমাত্র তোমারই নিকট সাহায্য প্রার্থনা করি। আমাদেরকে সরল পথ দেখাও। তাদের পথ, যাদেরকে তুমি নেয়ামত দান করেছ। তাদের পথ নয়, যাদের প্রতি তোমার গজব নাযিল হয়েছে এবং যারা পথভ্রষ্ট হয়েছে।",
+          "benefits": "সূরা আল-ফাতিহা কুরআনের প্রথম অধ্যায় এবং প্রতিটি নামাজের জন্য অত্যাবশ্যক। এতে কুরআনের সারমর্ম রয়েছে এবং এটি দিকনির্দেশনা ও বরকতের জন্য একটি শক্তিশালী দোয়া।",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "q3",
+      "type": "quranic",
+      "category_slug": "ruqyah",
+      "arabic_text": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ قُلْ هُوَ اللَّهُ أَحَدٌ ﴿٢﴾ اللَّهُ الصَّمَدُ ﴿٣﴾ لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٤﴾ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ ﴿٥﴾",
+      "source": "Quran 112:1-4",
+      "quran_surah": 112,
+      "quran_ayah": 1,
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Surah Al-Ikhlas",
+          "transliteration": "Bismillahi ar-Rahmani ar-Raheem. Qul huwa Allahu ahad. Allahus-samad. Lam yalid wa lam yoolad. Wa lam yakun lahu kufuwan ahad.",
+          "translation": "In the name of Allah, the Most Gracious, the Most Merciful. Say, \"He is Allah, [who is] One. Allah, the Eternal Refuge. He neither begets nor is born. Nor is there to Him any equivalent.\"",
+          "benefits": "Surah Al-Ikhlas is equivalent to one-third of the Quran. It emphasizes the pure monotheism of Allah and provides protection and blessings when recited regularly.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "q4",
+      "type": "quranic",
+      "category_slug": "ruqyah",
+      "arabic_text": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ﴿٢﴾ مِن شَرِّ مَا خَلَقَ ﴿٣﴾ وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ ﴿٤﴾ وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ﴿٥﴾ وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ ﴿٦﴾",
+      "source": "Quran 113:1-5",
+      "quran_surah": 113,
+      "quran_ayah": 1,
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Surah Al-Falaq",
+          "transliteration": "Bismillahi ar-Rahmani ar-Raheem. Qul a'udhu bi-rabbil-falaq. Min sharri ma khalaq. Wa min sharri ghasiqin idha waqab. Wa min sharrin-naffathati fil-'uqad. Wa min sharri hasidin idha hasad.",
+          "translation": "In the name of Allah, the Most Gracious, the Most Merciful. Say, \"I seek refuge in the Lord of daybreak. From the evil of that which He created. And from the evil of darkness when it settles. And from the evil of the blowers in knots. And from the evil of an envier when he envies.\"",
+          "benefits": "Surah Al-Falaq is one of the Mu'awwidhatayn (the two surahs of refuge). It provides protection from evil, black magic, and the evil eye.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "q5",
+      "type": "quranic",
+      "category_slug": "ruqyah",
+      "arabic_text": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ قُلْ أَعُوذُ بِرَبِّ النَّاسِ ﴿٢﴾ مَلِكِ النَّاسِ ﴿٣﴾ إِلَٰهِ النَّاسِ ﴿٤﴾ مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ﴿٥﴾ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ﴿٦﴾ مِنَ الْجِنَّةِ وَالنَّاسِ ﴿٧﴾",
+      "source": "Quran 114:1-6",
+      "quran_surah": 114,
+      "quran_ayah": 1,
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Surah An-Nas",
+          "transliteration": "Bismillahi ar-Rahmani ar-Raheem. Qul a'udhu bi-rabbin-nas. Malikin-nas. Ilahin-nas. Min sharril-waswasil-khannas. Alladhi yuwaswisu fee sudoorin-nas. Minal-jinnati wan-nas.",
+          "translation": "In the name of Allah, the Most Gracious, the Most Merciful. Say, \"I seek refuge in the Lord of mankind. The Sovereign of mankind. The God of mankind. From the evil of the retreating whisperer. Who whispers [evil] into the breasts of mankind. From among the jinn and mankind.\"",
+          "benefits": "Surah An-Nas is the second of the Mu'awwidhatayn. It provides protection from evil whispers, jinn, and negative influences.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "q6",
+      "type": "quranic",
+      "category_slug": "sleep",
+      "arabic_text": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ تَبَارَكَ الَّذِي بِيَدِهِ الْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ ﴿٢﴾ الَّذِي خَلَقَ الْمَوْتَ وَالْحَيَاةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًا ۚ وَهُوَ الْعَزِيزُ الْغَفُورُ ﴿٣﴾",
+      "source": "Quran 67:1-30",
+      "quran_surah": 67,
+      "quran_ayah": 1,
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Surah Al-Mulk",
+          "transliteration": "Bismillahi ar-Rahmani ar-Raheem. Tabarakal-ladhi bi-yadihil-mulk wa huwa 'ala kulli shay'in qadeer. Alladhi khalaqal-mawta wal-hayata li-yabluwakum ayyukum ahsanu 'amala. Wa huwal-'azeezul-ghafoor.",
+          "translation": "In the name of Allah, the Most Gracious, the Most Merciful. Blessed is He in whose hand is dominion, and He is over all things competent. [And] who created death and life to test you [as to] which of you is best in deed - and He is the Exalted in Might, the Forgiving.",
+          "benefits": "Surah Al-Mulk is known as the protector from the punishment of the grave. It is recommended to recite it before sleeping.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "q7",
+      "type": "quranic",
+      "category_slug": null,
+      "arabic_text": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ يس ﴿٢﴾ وَالْقُرْآنِ الْحَكِيمِ ﴿٣﴾ إِنَّكَ لَمِنَ الْمُرْسَلِينَ ﴿٤﴾ عَلَىٰ صِرَاطٍ مُّسْتَقِيمٍ ﴿٥﴾",
+      "source": "Quran 36:1-83",
+      "quran_surah": 36,
+      "quran_ayah": 1,
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Surah Ya-Sin",
+          "transliteration": "Bismillahi ar-Rahmani ar-Raheem. Ya-Sin. Wal-Qur'anil-hakeem. Innaka laminal-mursaleen. 'Ala siratim-mustaqeem.",
+          "translation": "In the name of Allah, the Most Gracious, the Most Merciful. Ya, Seen. By the wise Quran. Indeed, [O Muhammad], you are from among the messengers. On a straight path.",
+          "benefits": "Surah Ya-Sin is the heart of the Quran. It provides numerous benefits including ease in death, protection, and increased blessings.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "q8",
+      "type": "quranic",
+      "category_slug": null,
+      "arabic_text": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ إِذَا وَقَعَتِ الْوَاقِعَةُ ﴿٢﴾ لَيْسَ لِوَقْعَتِهَا كَاذِبَةٌ ﴿٣﴾ خَافِضَةٌ رَّافِعَةٌ ﴿٤﴾ إِذَا رُجَّتِ الْأَرْضُ رَجًّا ﴿٥﴾",
+      "source": "Quran 56:1-96",
+      "quran_surah": 56,
+      "quran_ayah": 1,
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Surah Al-Waqiah",
+          "transliteration": "Bismillahi ar-Rahmani ar-Raheem. Iza waqa'atil-waqi'ah. Laisa li-waq'atiha kazibah. Khafidatur-rafi'ah. Iza rujjatil-ardu rajja.",
+          "translation": "In the name of Allah, the Most Gracious, the Most Merciful. When the Event occurs, there is no denying that it will occur. It will bring low [some] and bring high [others]. When the earth is shaken with convulsion.",
+          "benefits": "Surah Al-Waqiah is known as the surah of wealth and sustenance. Reciting it regularly helps increase rizq (provision) and protects from poverty.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "h1",
+      "type": "hadith",
+      "category_slug": "morning",
+      "arabic_text": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيكَ لَهُ",
+      "source": "Muslim",
+      "hadith_book": "Muslim",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Morning",
+          "transliteration": "Asbahna wa asbahal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "We have reached the morning and at this very time all sovereignty belongs to Allah. All praise is for Allah. None has the right to be worshipped except Allah, alone, without any partner.",
+          "benefits": "This dua is recited in the morning to seek Allah's protection and blessings for the day ahead.",
+          "explanation": ""
+        },
+        "bn": {
+          "title": "সকালের দোয়া",
+          "transliteration": "আসবাহনা ওয়া আসবাহাল-মুলকু লিল্লাহ, ওয়ালহামদু লিল্লাহ, লা ইলাহা ইল্লাল্লাহু ওয়াহদাহু লা শারীকা লাহ",
+          "translation": "আমরা সকালে পৌঁছেছি এবং এই মুহূর্তে সমস্ত সার্বভৌমত্ব আল্লাহর জন্য। সকল প্রশংসা আল্লাহর জন্য। আল্লাহ ছাড়া কোন ইলাহ নেই, তিনি একক, কোন অংশীদার নেই।",
+          "benefits": "এই দোয়া সারা দিনের জন্য বরকত ও সুরক্ষা আনে। ফজর নামাজের পর প্রতিদিন সকালে এটি পাঠ করার পরামর্শ দেওয়া হয়।",
+          "explanation": ""
+        },
+        "ar": {
+          "title": "دعاء الصباح",
+          "transliteration": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ",
+          "translation": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ",
+          "explanation": "يُقرأ هذا الدعاء في الصباح لطلب حماية الله وبركاته لليوم",
+          "benefits": "الحماية لليوم، البركات، القوة الروحية"
+        },
+        "de": {
+          "title": "Morgen-Dua",
+          "transliteration": "Asbahna wa asbahal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "Wir haben den Morgen erreicht und zu dieser Zeit gehört alle Souveränität Allah. Aller Preis gebührt Allah. Niemand hat das Recht, angebetet zu werden, außer Allah, allein, ohne Partner",
+          "explanation": "Dieses Dua wird morgens rezitiert, um Allahs Schutz und Segen für den Tag zu erbitten",
+          "benefits": "Schutz für den Tag, Segen, spirituelle Stärke"
+        },
+        "ur": {
+          "title": "صبح کی دعا",
+          "transliteration": "اصبحنا واصبح الملک للہ، والحمد للہ، لا الہ الا اللہ وحدہ لا شریک لہ",
+          "translation": "ہم صبح کو پہنچ گئے اور اس وقت تمام بادشاہی اللہ کی ہے۔ تمام تعریفیں اللہ کے لیے ہیں۔ اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، کوئی شریک نہیں",
+          "explanation": "یہ دعا صبح کو اللہ کی حفاظت اور دن کی برکت کے لیے پڑھی جاتی ہے",
+          "benefits": "دن کی حفاظت، برکتیں، روحانی طاقت"
+        },
+        "es": {
+          "title": "Dua de la mañana",
+          "transliteration": "Asbahna wa asbahal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "Hemos llegado a la mañana y en este momento toda soberanía pertenece a Alá. Toda alabanza es para Alá. Nadie tiene derecho a ser adorado excepto Alá, solo, sin ningún socio",
+          "explanation": "Este dua se recita por la mañana para buscar la protección y bendiciones de Alá para el día",
+          "benefits": "Protección para el día, bendiciones, fuerza espiritual"
+        },
+        "id": {
+          "title": "Doa pagi",
+          "transliteration": "Asbahna wa asbahal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "Kami telah mencapai pagi dan pada saat ini semua kedaulatan milik Allah. Semua pujian untuk Allah. Tidak ada yang berhak disembah kecuali Allah, sendirian, tanpa partner",
+          "explanation": "Doa ini dibaca di pagi hari untuk memohon perlindungan dan berkah Allah untuk hari ini",
+          "benefits": "Perlindungan untuk hari ini, berkah, kekuatan spiritual"
+        }
+      }
+    },
+    {
+      "id": "h2",
+      "type": "hadith",
+      "category_slug": "evening",
+      "arabic_text": "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيكَ لَهُ",
+      "source": "Muslim",
+      "hadith_book": "Muslim",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Evening",
+          "transliteration": "Amsayna wa amsal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "We have reached the evening and at this very time all sovereignty belongs to Allah. All praise is for Allah. None has the right to be worshipped except Allah, alone, without any partner.",
+          "benefits": "This dua is recited in the evening to thank Allah for the day and seek His protection for the night.",
+          "explanation": ""
+        },
+        "bn": {
+          "title": "সন্ধ্যার দোয়া",
+          "transliteration": "আমসাইনা ওয়া আমসাল-মুলকু লিল্লাহ, ওয়ালহামদু লিল্লাহ, লা ইলাহা ইল্লাল্লাহু ওয়াহদাহু লা শারীকা লাহ",
+          "translation": "আমরা সন্ধ্যার পৌঁছেছি এবং এই মুহূর্তে সমস্ত সার্বভৌমত্ব আল্লাহর জন্য। সকল প্রশংসা আল্লাহর জন্য। আল্লাহ ছাড়া কোন ইলাহ নেই, তিনি একক, কোন অংশীদার নেই।",
+          "benefits": "এই দোয়া সন্ধ্যার প্রতিদিন আল্লাহর জন্য বরকত ও তাঁর রাতের জন্য সুরক্ষা প্রার্থনা করার পরামর্শ দেওয়া হয়।",
+          "explanation": ""
+        },
+        "ar": {
+          "title": "دعاء المساء",
+          "transliteration": "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ",
+          "translation": "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ",
+          "explanation": "يُقرأ هذا الدعاء في المساء لطلب حماية الله وبركاته للليل",
+          "benefits": "الحماية للليل، البركات، القوة الروحية"
+        },
+        "de": {
+          "title": "Abend-Dua",
+          "transliteration": "Amsayna wa amsal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "Wir haben den Abend erreicht und zu dieser Zeit gehört alle Souveränität Allah. Aller Preis gebührt Allah. Niemand hat das Recht, angebetet zu werden, außer Allah, allein, ohne Partner",
+          "explanation": "Dieses Dua wird abends rezitiert, um Allahs Schutz und Segen für die Nacht zu erbitten",
+          "benefits": "Schutz für die Nacht, Segen, spirituelle Stärke"
+        },
+        "ur": {
+          "title": "شام کی دعا",
+          "transliteration": "امسینا وامسا الملک للہ، والحمد للہ، لا الہ الا اللہ وحدہ لا شریک لہ",
+          "translation": "ہم شام کو پہنچ گئے اور اس وقت تمام بادشاہی اللہ کی ہے۔ تمام تعریفیں اللہ کے لیے ہیں۔ اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، کوئی شریک نہیں",
+          "explanation": "یہ دعا شام کو اللہ کی حفاظت اور رات کی برکت کے لیے پڑھی جاتی ہے",
+          "benefits": "رات کی حفاظت، برکتیں، روحانی طاقت"
+        },
+        "es": {
+          "title": "Dua de la tarde",
+          "transliteration": "Amsayna wa amsal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "Hemos llegado a la tarde y en este momento toda soberanía pertenece a Alá. Toda alabanza es para Alá. Nadie tiene derecho a ser adorado excepto Alá, solo, sin ningún socio",
+          "explanation": "Este dua se recita por la tarde para buscar la protección y bendiciones de Alá para la noche",
+          "benefits": "Protección para la noche, bendiciones, fuerza espiritual"
+        },
+        "id": {
+          "title": "Doa sore",
+          "transliteration": "Amsayna wa amsal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "Kami telah mencapai sore dan pada saat ini semua kedaulatan milik Allah. Semua pujian untuk Allah. Tidak ada yang berhak disembah kecuali Allah, sendirian, tanpa partner",
+          "explanation": "Doa ini dibaca di sore hari untuk memohon perlindungan dan berkah Allah untuk malam ini",
+          "benefits": "Perlindungan untuk malam ini, berkah, kekuatan spiritual"
+        }
+      }
+    },
+    {
+      "id": "h3",
+      "type": "hadith",
+      "category_slug": "food-drink",
+      "arabic_text": "بِسْمِ اللَّهِ",
+      "source": "Abu Dawud",
+      "hadith_book": "Abu Dawud",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua before Eating",
+          "transliteration": "Bismillah",
+          "translation": "In the name of Allah",
+          "benefits": "This dua is recited before eating to seek Allah's blessings and remember that He is the provider of all sustenance.",
+          "explanation": ""
+        },
+        "bn": {
+          "title": "খাওয়ার আগের দুআ",
+          "transliteration": "বিসমিল্লাহ",
+          "translation": "আল্লাহর নামে",
+          "explanation": "এই দুআটি খাওয়ার আগে খাবারে আল্লাহর বরকত কামনা করার জন্য পাঠ করা হয়",
+          "benefits": "খাবারে বরকত, ক্ষতি থেকে সুরক্ষা, কৃতজ্ঞতা"
+        },
+        "ar": {
+          "title": "الدعاء قبل الأكل",
+          "transliteration": "بِسْمِ اللَّهِ",
+          "translation": "باسم الله",
+          "explanation": "يُقرأ هذا الدعاء قبل الأكل لطلب بركة الله على الطعام",
+          "benefits": "البركة على الطعام، الحماية من الأذى، الشكر"
+        },
+        "de": {
+          "title": "Dua vor dem Essen",
+          "transliteration": "Bismillah",
+          "translation": "Im Namen Allahs",
+          "explanation": "Dieses Dua wird vor dem Essen rezitiert, um Allahs Segen auf das Essen zu erbitten",
+          "benefits": "Segen auf dem Essen, Schutz vor Schaden, Dankbarkeit"
+        },
+        "ur": {
+          "title": "کھانے سے پہلے کی دعا",
+          "transliteration": "بسم اللہ",
+          "translation": "اللہ کے نام سے",
+          "explanation": "یہ دعا کھانے سے پہلے کھانے پر اللہ کی برکت کے لیے پڑھی جاتی ہے",
+          "benefits": "کھانے پر برکت، نقصان سے حفاظت، شکرگزاری"
+        },
+        "es": {
+          "title": "Dua antes de comer",
+          "transliteration": "Bismillah",
+          "translation": "En el nombre de Alá",
+          "explanation": "Este dua se recita antes de comer para buscar las bendiciones de Alá en la comida",
+          "benefits": "Bendiciones en la comida, protección contra el daño, gratitud"
+        },
+        "id": {
+          "title": "Doa sebelum makan",
+          "transliteration": "Bismillah",
+          "translation": "Dengan nama Allah",
+          "explanation": "Doa ini dibaca sebelum makan untuk memohon berkah Allah pada makanan",
+          "benefits": "Berkah pada makanan, perlindungan dari bahaya, syukur"
+        }
+      }
+    },
+    {
+      "id": "h4",
+      "type": "hadith",
+      "category_slug": "food-drink",
+      "arabic_text": "الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلاَ قُوَّةٍ",
+      "source": "Abu Dawud",
+      "hadith_book": "Abu Dawud",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua after Eating",
+          "transliteration": "Alhamdu lillahil-ladhi at'amani haadha wa razaqanihi min ghayri hawlin minni wa la quwwah",
+          "translation": "All praise is for Allah who fed me this and provided it for me, with no power or might from myself",
+          "benefits": "This dua is recited after eating to thank Allah for the food and acknowledge that all provision comes from Him.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "h5",
+      "type": "hadith",
+      "category_slug": "travel",
+      "arabic_text": "اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى",
+      "source": "Muslim",
+      "hadith_book": "Muslim",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Travel",
+          "transliteration": "Allahumma inna nas'aluka fi safarina haadha al-birra wat-taqwa",
+          "translation": "O Allah, we ask You on this journey of ours for righteousness and piety",
+          "benefits": "This dua is recited when starting a journey to seek Allah's protection and guidance for safe travel.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "h6",
+      "type": "hadith",
+      "category_slug": "daily-life",
+      "arabic_text": "بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا",
+      "source": "Abu Dawud",
+      "hadith_book": "Abu Dawud",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Entering Home",
+          "transliteration": "Bismillahi wa lajna, wa bismillahi kharajna, wa 'alallahi rabbina tawakkalna",
+          "translation": "In the name of Allah we enter, in the name of Allah we leave, and upon our Lord we place our trust",
+          "benefits": "This dua is recited when entering home to seek Allah's protection and blessings for the household.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "h7",
+      "type": "hadith",
+      "category_slug": "daily-life",
+      "arabic_text": "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ",
+      "source": "Abu Dawud",
+      "hadith_book": "Abu Dawud",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Leaving Home",
+          "transliteration": "Bismillah, tawakkaltu 'alallahi, wa la hawla wa la quwwata illa billah",
+          "translation": "In the name of Allah, I place my trust in Allah, and there is no power and no strength except with Allah",
+          "benefits": "This dua is recited when leaving home to seek Allah's protection and guidance throughout the day.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "h8",
+      "type": "hadith",
+      "category_slug": "daily-life",
+      "arabic_text": "الْحَمْدُ لِلَّهِ الَّذِي كَسَانِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلاَ قُوَّةٍ",
+      "source": "Abu Dawud",
+      "hadith_book": "Abu Dawud",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Wearing Clothes",
+          "transliteration": "Alhamdu lillahil-ladhi kasani haadha wa razaqanihi min ghayri hawlin minni wa la quwwah",
+          "translation": "All praise is for Allah who has clothed me with this and provided it for me, with no power or might from myself",
+          "benefits": "This dua is recited when wearing clothes to thank Allah for the clothing and acknowledge His blessings.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "dua-morning-1",
+      "type": "hadith",
+      "category_slug": "morning",
+      "arabic_text": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيكَ لَهُ",
+      "source": "Muslim",
+      "hadith_book": "Muslim",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Morning",
+          "transliteration": "Asbahna wa asbahal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "We have reached the morning and at this very time all sovereignty belongs to Allah. All praise is for Allah. None has the right to be worshipped except Allah, alone, without any partner.",
+          "benefits": "This dua is recited in the morning to seek Allah's protection and blessings for the day ahead.",
+          "explanation": ""
+        },
+        "bn": {
+          "title": "সকালের দুআ",
+          "transliteration": "আসবাহনা ওয়া আসবাহাল মুলকু লিল্লাহ, ওয়ালহামদু লিল্লাহ, লা ইলাহা ইল্লাল্লাহু ওয়াহদাহু লা শারীকা লাহ",
+          "translation": "আমরা সকালে পৌঁছেছি এবং এই মুহূর্তে সব সার্বভৌমত্ব আল্লাহর। সব প্রশংসা আল্লাহর জন্য। আল্লাহ ছাড়া কেউ উপাসনার যোগ্য নয়, তিনি একক, কোনো অংশীদার ছাড়া",
+          "explanation": "এই দুআটি সকালে আল্লাহর সুরক্ষা এবং দিনের জন্য বরকত কামনা করার জন্য পাঠ করা হয়",
+          "benefits": "দিনের জন্য সুরক্ষা, বরকত, আধ্যাত্মিক শক্তি"
+        },
+        "ar": {
+          "title": "دعاء الصباح",
+          "transliteration": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ",
+          "translation": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ",
+          "explanation": "يُقرأ هذا الدعاء في الصباح لطلب حماية الله وبركاته لليوم",
+          "benefits": "الحماية لليوم، البركات، القوة الروحية"
+        },
+        "de": {
+          "title": "Morgen-Dua",
+          "transliteration": "Asbahna wa asbahal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "Wir haben den Morgen erreicht und zu dieser Zeit gehört alle Souveränität Allah. Aller Preis gebührt Allah. Niemand hat das Recht, angebetet zu werden, außer Allah, allein, ohne Partner",
+          "explanation": "Dieses Dua wird morgens rezitiert, um Allahs Schutz und Segen für den Tag zu erbitten",
+          "benefits": "Schutz für den Tag, Segen, spirituelle Stärke"
+        },
+        "ur": {
+          "title": "صبح کی دعا",
+          "transliteration": "اصبحنا واصبح الملک للہ، والحمد للہ، لا الہ الا اللہ وحدہ لا شریک لہ",
+          "translation": "ہم صبح کو پہنچ گئے اور اس وقت تمام بادشاہی اللہ کی ہے۔ تمام تعریفیں اللہ کے لیے ہیں۔ اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، کوئی شریک نہیں",
+          "explanation": "یہ دعا صبح کو اللہ کی حفاظت اور دن کی برکت کے لیے پڑھی جاتی ہے",
+          "benefits": "دن کی حفاظت، برکتیں، روحانی طاقت"
+        },
+        "es": {
+          "title": "Dua de la mañana",
+          "transliteration": "Asbahna wa asbahal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "Hemos llegado a la mañana y en este momento toda soberanía pertenece a Alá. Toda alabanza es para Alá. Nadie tiene derecho a ser adorado excepto Alá, solo, sin ningún socio",
+          "explanation": "Este dua se recita por la mañana para buscar la protección y bendiciones de Alá para el día",
+          "benefits": "Protección para el día, bendiciones, fuerza espiritual"
+        },
+        "id": {
+          "title": "Doa pagi",
+          "transliteration": "Asbahna wa asbahal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "Kami telah mencapai pagi dan pada saat ini semua kedaulatan milik Allah. Semua pujian untuk Allah. Tidak ada yang berhak disembah kecuali Allah, sendirian, tanpa partner",
+          "explanation": "Doa ini dibaca di pagi hari untuk memohon perlindungan dan berkah Allah untuk hari ini",
+          "benefits": "Perlindungan untuk hari ini, berkah, kekuatan spiritual"
+        }
+      }
+    },
+    {
+      "id": "dua-evening-1",
+      "type": "hadith",
+      "category_slug": "evening",
+      "arabic_text": "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللهُ وَحْدَهُ لاَ شَرِيكَ لَهُ",
+      "source": "Muslim",
+      "hadith_book": "Muslim",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Evening",
+          "transliteration": "Amsayna wa amsal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "We have reached the evening and at this very time all sovereignty belongs to Allah. All praise is for Allah. None has the right to be worshipped except Allah, alone, without any partner.",
+          "benefits": "This dua is recited in the evening to thank Allah for the day and seek His protection for the night.",
+          "explanation": ""
+        },
+        "bn": {
+          "title": "সন্ধ্যার দুআ",
+          "transliteration": "আমসায়না ওয়া আমসাল মুলকু লিল্লাহ, ওয়ালহামদু লিল্লাহ, লা ইলাহা ইল্লাল্লাহু ওয়াহদাহু লা শারীকা লাহ",
+          "translation": "আমরা সন্ধ্যায় পৌঁছেছি এবং এই মুহূর্তে সব সার্বভৌমত্ব আল্লাহর। সব প্রশংসা আল্লাহর জন্য। আল্লাহ ছাড়া কেউ উপাসনার যোগ্য নয়, তিনি একক, কোনো অংশীদার ছাড়া",
+          "explanation": "এই দুআটি সন্ধ্যায় আল্লাহর সুরক্ষা এবং রাতের জন্য বরকত কামনা করার জন্য পাঠ করা হয়",
+          "benefits": "রাতের জন্য সুরক্ষা, বরকত, আধ্যাত্মিক শক্তি"
+        },
+        "ar": {
+          "title": "دعاء المساء",
+          "transliteration": "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ",
+          "translation": "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ",
+          "explanation": "يُقرأ هذا الدعاء في المساء لطلب حماية الله وبركاته للليل",
+          "benefits": "الحماية للليل، البركات، القوة الروحية"
+        },
+        "de": {
+          "title": "Abend-Dua",
+          "transliteration": "Amsayna wa amsal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "Wir haben den Abend erreicht und zu dieser Zeit gehört alle Souveränität Allah. Aller Preis gebührt Allah. Niemand hat das Recht, angebetet zu werden, außer Allah, allein, ohne Partner",
+          "explanation": "Dieses Dua wird abends rezitiert, um Allahs Schutz und Segen für die Nacht zu erbitten",
+          "benefits": "Schutz für die Nacht, Segen, spirituelle Stärke"
+        },
+        "ur": {
+          "title": "شام کی دعا",
+          "transliteration": "امسینا وامسا الملک للہ، والحمد للہ، لا الہ الا اللہ وحدہ لا شریک لہ",
+          "translation": "ہم شام کو پہنچ گئے اور اس وقت تمام بادشاہی اللہ کی ہے۔ تمام تعریفیں اللہ کے لیے ہیں۔ اللہ کے سوا کوئی معبود نہیں، وہ اکیلا ہے، کوئی شریک نہیں",
+          "explanation": "یہ دعا شام کو اللہ کی حفاظت اور رات کی برکت کے لیے پڑھی جاتی ہے",
+          "benefits": "رات کی حفاظت، برکتیں، روحانی طاقت"
+        },
+        "es": {
+          "title": "Dua de la tarde",
+          "transliteration": "Amsayna wa amsal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "Hemos llegado a la tarde y en este momento toda soberanía pertenece a Alá. Toda alabanza es para Alá. Nadie tiene derecho a ser adorado excepto Alá, solo, sin ningún socio",
+          "explanation": "Este dua se recita por la tarde para buscar la protección y bendiciones de Alá para la noche",
+          "benefits": "Protección para la noche, bendiciones, fuerza espiritual"
+        },
+        "id": {
+          "title": "Doa sore",
+          "transliteration": "Amsayna wa amsal mulku lillah, walhamdu lillah, la ilaha illallahu wahdahu la shareeka lah",
+          "translation": "Kami telah mencapai sore dan pada saat ini semua kedaulatan milik Allah. Semua pujian untuk Allah. Tidak ada yang berhak disembah kecuali Allah, sendirian, tanpa partner",
+          "explanation": "Doa ini dibaca di sore hari untuk memohon perlindungan dan berkah Allah untuk malam ini",
+          "benefits": "Perlindungan untuk malam ini, berkah, kekuatan spiritual"
+        }
+      }
+    },
+    {
+      "id": "dua-ramadan-1",
+      "type": "hadith",
+      "category_slug": "ramadan",
+      "arabic_text": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَأَعُوذُ بِكَ مِنَ النَّارِ",
+      "source": "Abu Dawud",
+      "hadith_book": "Abu Dawud",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Ramadan",
+          "transliteration": "Allahumma inni as'alukal jannata wa a'udhu bika minan naar",
+          "translation": "O Allah, I ask You for Paradise and I seek refuge with You from the Fire",
+          "benefits": "This dua is recited during Ramadan to seek Allah's mercy and ask for Paradise while seeking refuge from Hell.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "dua-food-1",
+      "type": "hadith",
+      "category_slug": "food-drink",
+      "arabic_text": "بِسْمِ اللَّهِ",
+      "source": "Bukhari",
+      "hadith_book": "Bukhari",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua Before Eating",
+          "transliteration": "Bismillah",
+          "translation": "In the name of Allah",
+          "benefits": "This dua is recited before eating to seek Allah's blessings and remember that He is the provider of all sustenance.",
+          "explanation": ""
+        },
+        "bn": {
+          "title": "খাওয়ার আগের দুআ",
+          "transliteration": "বিসমিল্লাহ",
+          "translation": "আল্লাহর নামে",
+          "explanation": "এই দুআটি খাওয়ার আগে খাবারে আল্লাহর বরকত কামনা করার জন্য পাঠ করা হয়",
+          "benefits": "খাবারে বরকত, ক্ষতি থেকে সুরক্ষা, কৃতজ্ঞতা"
+        },
+        "ar": {
+          "title": "الدعاء قبل الأكل",
+          "transliteration": "بِسْمِ اللَّهِ",
+          "translation": "باسم الله",
+          "explanation": "يُقرأ هذا الدعاء قبل الأكل لطلب بركة الله على الطعام",
+          "benefits": "البركة على الطعام، الحماية من الأذى، الشكر"
+        },
+        "de": {
+          "title": "Dua vor dem Essen",
+          "transliteration": "Bismillah",
+          "translation": "Im Namen Allahs",
+          "explanation": "Dieses Dua wird vor dem Essen rezitiert, um Allahs Segen auf das Essen zu erbitten",
+          "benefits": "Segen auf dem Essen, Schutz vor Schaden, Dankbarkeit"
+        },
+        "ur": {
+          "title": "کھانے سے پہلے کی دعا",
+          "transliteration": "بسم اللہ",
+          "translation": "اللہ کے نام سے",
+          "explanation": "یہ دعا کھانے سے پہلے کھانے پر اللہ کی برکت کے لیے پڑھی جاتی ہے",
+          "benefits": "کھانے پر برکت، نقصان سے حفاظت، شکرگزاری"
+        },
+        "es": {
+          "title": "Dua antes de comer",
+          "transliteration": "Bismillah",
+          "translation": "En el nombre de Alá",
+          "explanation": "Este dua se recita antes de comer para buscar las bendiciones de Alá en la comida",
+          "benefits": "Bendiciones en la comida, protección contra el daño, gratitud"
+        },
+        "id": {
+          "title": "Doa sebelum makan",
+          "transliteration": "Bismillah",
+          "translation": "Dengan nama Allah",
+          "explanation": "Doa ini dibaca sebelum makan untuk memohon berkah Allah pada makanan",
+          "benefits": "Berkah pada makanan, perlindungan dari bahaya, syukur"
+        }
+      }
+    },
+    {
+      "id": "dua-travel-1",
+      "type": "hadith",
+      "category_slug": "travel",
+      "arabic_text": "اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى",
+      "source": "Muslim",
+      "hadith_book": "Muslim",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Travel",
+          "transliteration": "Allahumma inna nas'aluka fi safarina haadha al-birra wat-taqwa",
+          "translation": "O Allah, we ask You on this journey of ours for righteousness and piety",
+          "benefits": "This dua is recited when starting a journey to seek Allah's protection and guidance for safe travel.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "dua-salah-1",
+      "type": "hadith",
+      "category_slug": "salah",
+      "arabic_text": "اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ",
+      "source": "Bukhari",
+      "hadith_book": "Bukhari",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua Before Salah",
+          "transliteration": "Allahumma ba'id bayni wa bayna khataayaya kama ba'adta baynal-mashriqi wal-maghrib",
+          "translation": "O Allah, distance me from my sins as You have distanced the East from the West",
+          "benefits": "This dua is recited before salah to seek Allah's forgiveness and purification from sins.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "dua-sleep-1",
+      "type": "hadith",
+      "category_slug": "sleep",
+      "arabic_text": "بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي، وَبِكَ أَرْفَعُهُ، فَإِنْ أَمْسَكْتَ نَفْسِي فَارْحَمْهَا، وَإِنْ أَرْسَلْتَهَا فَاحْفَظْهَا بِمَا تَحْفَظُ بِهِ عِبَادَكَ الصَّالِحِينَ",
+      "source": "Bukhari",
+      "hadith_book": "Bukhari",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua Before Sleeping",
+          "transliteration": "Bismika rabbi wada'tu janbi, wa bika arfa'uhu, fa-in amsakta nafsi farhamha, wa-in arsaltaha fahfazha bima tahfazu bihi 'ibadakas-saliheen",
+          "translation": "In Your name, my Lord, I lay my side down, and in Your name I raise it. If You should take my soul then have mercy upon it, and if You should return my soul then protect it in the manner You do so with Your righteous servants",
+          "benefits": "This dua is recited before sleeping to seek Allah's protection and mercy during sleep.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "dua-family-1",
+      "type": "quranic",
+      "category_slug": "family",
+      "arabic_text": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+      "source": "Quran 25:74",
+      "quran_surah": 25,
+      "quran_ayah": 74,
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Family",
+          "transliteration": "Rabbana hab lana min azwajina wa dhurriyyatina qurrata a'yunin waj'alna lil-muttaqina imama",
+          "translation": "Our Lord, grant us from among our spouses and offspring comfort to our eyes and make us an example for the righteous",
+          "benefits": "This dua is recited to ask Allah for righteous spouses and children who will be a source of joy and comfort.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "dua-illness-1",
+      "type": "hadith",
+      "category_slug": "illness",
+      "arabic_text": "أَسْأَلُ اللَّهَ الْعَظِيمَ رَبَّ الْعَرْشِ الْعَظِيمِ أَنْ يَشْفِيَكَ",
+      "source": "Abu Dawud",
+      "hadith_book": "Abu Dawud",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Illness",
+          "transliteration": "As'alullaha al-'adheem rabbal-'arshil-'adheem an yashfiyak",
+          "translation": "I ask Allah the Most Great, Lord of the Great Throne, to heal you",
+          "benefits": "This dua is recited for healing and seeking Allah's cure for illnesses.",
+          "explanation": ""
+        },
+        "bn": {
+          "title": "সুস্থতার দুআ",
+          "transliteration": "আসআলু আল্লাহাল আজীম, রাব্বাল আরশিল আজীম আন ইয়াশফিয়াক",
+          "translation": "আমি আল্লাহ মহান, মহান আরশের প্রভুকে আপনাকে সুস্থ করার জন্য জিজ্ঞাসা করছি",
+          "explanation": "এই দুআটি অসুস্থতা থেকে সুস্থতা এবং পুনরুদ্ধারের জন্য পাঠ করা হয়",
+          "benefits": "অসুস্থতা থেকে সুস্থতা, আধ্যাত্মিক শক্তি, ঐশ্বরিক করুণা"
+        },
+        "ar": {
+          "title": "دعاء الشفاء",
+          "transliteration": "أَسْأَلُ اللَّهَ الْعَظِيمَ رَبَّ الْعَرْشِ الْعَظِيمِ أَنْ يَشْفِيَكَ",
+          "translation": "أسأل الله العظيم رب العرش العظيم أن يشفيك",
+          "explanation": "يُقرأ هذا الدعاء للشفاء والتعافي من المرض",
+          "benefits": "الشفاء من المرض، القوة الروحية، رحمة الله"
+        },
+        "de": {
+          "title": "Dua für Heilung",
+          "transliteration": "As'alu Allaha al-'Adheem, Rabbal-'Arshil-'Adheem an yashfiyak",
+          "translation": "Ich bitte Allah den Allmächtigen, Herrn des Großen Thrones, dich zu heilen",
+          "explanation": "Dieses Dua wird für Heilung und Genesung von Krankheit rezitiert",
+          "benefits": "Heilung von Krankheit, spirituelle Stärke, göttliche Barmherzigkeit"
+        },
+        "ur": {
+          "title": "شفا کی دعا",
+          "transliteration": "اسال اللہ العظیم رب العرش العظیم ان یشفیاک",
+          "translation": "میں اللہ عظیم، عرش عظیم کے رب سے آپ کو شفا دینے کی درخواست کرتا ہوں",
+          "explanation": "یہ دعا بیماری سے شفا اور صحت یابی کے لیے پڑھی جاتی ہے",
+          "benefits": "بیماری سے شفا، روحانی طاقت، الہی رحمت"
+        },
+        "es": {
+          "title": "Dua para la curación",
+          "transliteration": "As'alu Allaha al-'Adheem, Rabbal-'Arshil-'Adheem an yashfiyak",
+          "translation": "Le pido a Alá el Más Grande, Señor del Gran Trono, que te cure",
+          "explanation": "Este dua se recita para la curación y recuperación de la enfermedad",
+          "benefits": "Curación de la enfermedad, fuerza espiritual, misericordia divina"
+        },
+        "id": {
+          "title": "Doa untuk kesembuhan",
+          "transliteration": "As'alu Allaha al-'Adheem, Rabbal-'Arshil-'Adheem an yashfiyak",
+          "translation": "Saya memohon kepada Allah Yang Maha Agung, Tuhan Arsy Yang Agung, untuk menyembuhkanmu",
+          "explanation": "Doa ini dibaca untuk kesembuhan dan pemulihan dari penyakit",
+          "benefits": "Kesembuhan dari penyakit, kekuatan spiritual, rahmat ilahi"
+        }
+      }
+    },
+    {
+      "id": "dua-ruqyah-1",
+      "type": "hadith",
+      "category_slug": "ruqyah",
+      "arabic_text": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ الَّتِي لَا يُجَاوِزُهُنَّ بَرٌّ وَلَا فَاجِرٌ",
+      "source": "Muslim",
+      "hadith_book": "Muslim",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Protection (Ruqyah)",
+          "transliteration": "A'udhu bi-kalimatillahit-tammatil-lati la yujawizuhunna barrun wa la fajir",
+          "translation": "I seek refuge in the perfect words of Allah which neither the upright nor the corrupt can overcome",
+          "benefits": "This dua provides protection from evil and harm through Allah's perfect words.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "dua-rizq-1",
+      "type": "hadith",
+      "category_slug": "rizq",
+      "arabic_text": "اللَّهُمَّ إِنِّي أَسْأَلُكَ رِزْقًا طَيِّبًا وَرِزْقًا وَاسِعًا",
+      "source": "Ibn Majah",
+      "hadith_book": "Ibn Majah",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Rizq (Provision)",
+          "transliteration": "Allahumma inni as'aluka rizqan tayyiban wa rizqan wasi'an",
+          "translation": "O Allah, I ask You for good and abundant provision",
+          "benefits": "This dua is recited to seek Allah's blessings for lawful and abundant provision.",
+          "explanation": ""
+        },
+        "bn": {
+          "title": "রিজিকের দুআ",
+          "transliteration": "আল্লাহুম্মা ইন্নি আসআলুকা রিজকান তাইয়্যিবান ওয়া রিজকান ওয়াসিয়ান",
+          "translation": "হে আল্লাহ, আমি আপনাকে উত্তম এবং প্রচুর রিজিক চাইছি",
+          "explanation": "এই দুআটি আল্লাহর কাছ থেকে উত্তম এবং প্রচুর রিজিক কামনা করার জন্য পাঠ করা হয়",
+          "benefits": "প্রচুর রিজিক, আর্থিক বরকত, ঐশ্বরিক সরবরাহ"
+        },
+        "ar": {
+          "title": "دعاء الرزق",
+          "transliteration": "اللَّهُمَّ إِنِّي أَسْأَلُكَ رِزْقاً طَيِّباً وَرَزْقاً وَاسِعاً",
+          "translation": "يا الله، أسألك رزقاً طيباً ورزقاً واسعاً",
+          "explanation": "يُقرأ هذا الدعاء لطلب رزق جيد ووفير من الله",
+          "benefits": "الرزق الوفير، البركات المالية، الرزق الإلهي"
+        },
+        "de": {
+          "title": "Dua für Versorgung",
+          "transliteration": "Allahumma inni as'aluka rizqan tayyiban wa rizqan wasi'an",
+          "translation": "O Allah, ich bitte Dich um guten und reichlichen Unterhalt",
+          "explanation": "Dieses Dua wird rezitiert, um guten und reichlichen Unterhalt von Allah zu erbitten",
+          "benefits": "Reichlicher Unterhalt, finanzielle Segnungen, göttliche Versorgung"
+        },
+        "ur": {
+          "title": "رزق کی دعا",
+          "transliteration": "اللہم انی اسالک رزقا طیبا ورزقا واسعا",
+          "translation": "اے اللہ! میں آپ سے اچھا اور وسیع رزق مانگتا ہوں",
+          "explanation": "یہ دعا اللہ سے اچھا اور وسیع رزق مانگنے کے لیے پڑھی جاتی ہے",
+          "benefits": "وسیع رزق، مالی برکتیں، الہی فراہمی"
+        },
+        "es": {
+          "title": "Dua para el sustento",
+          "transliteration": "Allahumma inni as'aluka rizqan tayyiban wa rizqan wasi'an",
+          "translation": "Oh Alá, te pido sustento bueno y abundante",
+          "explanation": "Este dua se recita para pedir sustento bueno y abundante de Alá",
+          "benefits": "Sustento abundante, bendiciones financieras, provisión divina"
+        },
+        "id": {
+          "title": "Doa untuk rezeki",
+          "transliteration": "Allahumma inni as'aluka rizqan tayyiban wa rizqan wasi'an",
+          "translation": "Ya Allah, aku memohon kepada-Mu rezeki yang baik dan melimpah",
+          "explanation": "Doa ini dibaca untuk memohon rezeki yang baik dan melimpah dari Allah",
+          "benefits": "Rezeki melimpah, berkah finansial, penyediaan ilahi"
+        }
+      }
+    },
+    {
+      "id": "dua-gratitude-1",
+      "type": "hadith",
+      "category_slug": "gratitude",
+      "arabic_text": "اللَّهُمَّ لَكَ الْحَمْدُ حَتَّى تَرْضَى، وَلَكَ الْحَمْدُ إِذَا رَضِيتَ، وَلَكَ الْحَمْدُ بَعْدَ الرِّضَا",
+      "source": "Ibn Majah",
+      "hadith_book": "Ibn Majah",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Gratitude",
+          "transliteration": "Allahumma lakal-hamdu hatta tardha, wa lakal-hamdu idha radita, wa lakal-hamdu ba'dar-rida",
+          "translation": "O Allah, to You belongs all praise until You are pleased, and to You belongs all praise when You are pleased, and to You belongs all praise after You are pleased",
+          "benefits": "This dua expresses complete gratitude to Allah in all circumstances.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "dua-purification-1",
+      "type": "hadith",
+      "category_slug": "purification",
+      "arabic_text": "اللَّهُمَّ طَهِّرْنِي مِنَ الذُّنُوبِ وَالْخَطَايَا كَمَا يُطَهَّرُ الثَّوْبُ الْأَبْيَضُ مِنَ الدَّنَسِ",
+      "source": "Muslim",
+      "hadith_book": "Muslim",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Purification",
+          "transliteration": "Allahumma tahhirni minadh-dhunubi wal-khataaya kama yutahharuth-thawbul-abyadu minad-danas",
+          "translation": "O Allah, purify me from sins and mistakes as a white garment is purified from filth",
+          "benefits": "This dua is recited to seek Allah's purification from sins and spiritual cleansing.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "dua-hajj-umrah-1",
+      "type": "hadith",
+      "category_slug": "hajj-umrah",
+      "arabic_text": "اللَّهُمَّ إِنِّي أُرِيدُ الْحَجَّ فَيَسِّرْهُ لِي وَتَقَبَّلْهُ مِنِّي",
+      "source": "Muslim",
+      "hadith_book": "Muslim",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Hajj and Umrah",
+          "transliteration": "Allahumma inni uridul-hajja fa-yassirhu li wa taqabbalhu minni",
+          "translation": "O Allah, I intend to perform Hajj, so make it easy for me and accept it from me",
+          "benefits": "This dua is recited when intending to perform Hajj or Umrah to seek Allah's facilitation and acceptance.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "dua-nature-1",
+      "type": "hadith",
+      "category_slug": "nature",
+      "arabic_text": "اللَّهُمَّ صَيِّبًا نَافِعًا",
+      "source": "Bukhari",
+      "hadith_book": "Bukhari",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Rain",
+          "transliteration": "Allahumma sayyiban nafi'an",
+          "translation": "O Allah, (bring) beneficial rain clouds",
+          "benefits": "This dua is recited when it rains to seek Allah's blessings and beneficial rain.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "c1",
+      "type": "hadith",
+      "category_slug": "food-drink",
+      "arabic_text": "بِسْمِ اللَّهِ وَعَلَى مِلَّةِ رَسُولِ اللَّهِ",
+      "source": "Abu Dawud",
+      "hadith_book": "Abu Dawud",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua Before Eating",
+          "transliteration": "Bismillahi wa 'ala millati rasoolillah",
+          "translation": "In the name of Allah and upon the religion of the Messenger of Allah",
+          "benefits": "This dua brings blessings to the food and protects from harm. It is recommended to recite before starting any meal.",
+          "explanation": ""
+        }
+      }
+    },
+    {
+      "id": "dua_010",
+      "type": "hadith",
+      "category_slug": "ramadan",
+      "priority": 1,
+      "tags": [
+        "ramadan",
+        "fasting",
+        "blessing"
+      ],
+      "arabic_text": "ذَهَبَ الظَّمَأُ، وَابْتَلَّتِ الْعُرُوقُ، وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ",
+      "reciter": "Abdul Rahman Al-Sudais",
+      "audio_duration": "00:00:20",
+      "audio_url": "https://api.example.com/audio/dua_010.mp3",
+      "quran_surah": null,
+      "quran_ayah": null,
+      "quran_juz": null,
+      "hadith_book": "Abu Dawud",
+      "hadith_chapter": "Fasting",
+      "hadith_number": "2357",
+      "source": "",
+      "when_to_recite": [
+        "When breaking fast",
+        "During Ramadan"
+      ],
+      "frequency": "special",
+      "difficulty": "beginner",
+      "estimated_time": "00:00:25",
+      "related_duas": [],
+      "notes": "Essential dua for breaking fast in Ramadan",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Breaking Fast",
+          "transliteration": "Dhahabadh dhama'u wabtallatil 'urooqu, wa thabatal ajru inshaa Allaah",
+          "translation": "The thirst is gone, the veins are moistened, and the reward is confirmed, if Allah wills",
+          "explanation": "This dua is recited when breaking the fast during Ramadan",
+          "benefits": "Blessings of fasting, gratitude, spiritual reward"
+        },
+        "bn": {
+          "title": "রোজা ভাঙার দুআ",
+          "transliteration": "ধাহাবাধ ধামাউ ওয়াবতাল্লাতিল উরুকু, ওয়া সাবাতাল আজরু ইনশা আল্লাহ",
+          "translation": "পিপাসা চলে গেছে, শিরাগুলি সিক্ত হয়েছে, এবং পুরস্কার নিশ্চিত হয়েছে, আল্লাহ চাইলে",
+          "explanation": "এই দুআটি রমজানে রোজা ভাঙার সময় পাঠ করা হয়",
+          "benefits": "রোজার বরকত, কৃতজ্ঞতা, আধ্যাত্মিক পুরস্কার"
+        },
+        "ar": {
+          "title": "دعاء الإفطار",
+          "transliteration": "ذَهَبَ الظَّمَأُ، وَابْتَلَّتِ الْعُرُوقُ، وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ",
+          "translation": "ذهب الظمأ، وابتلت العروق، وثبت الأجر إن شاء الله",
+          "explanation": "يُقرأ هذا الدعاء عند الإفطار في رمضان",
+          "benefits": "بركات الصيام، الشكر، الأجر الروحي"
+        },
+        "de": {
+          "title": "Dua zum Fastenbrechen",
+          "transliteration": "Dhahabadh dhama'u wabtallatil 'urooqu, wa thabatal ajru inshaa Allaah",
+          "translation": "Der Durst ist vergangen, die Adern sind befeuchtet, und die Belohnung ist bestätigt, wenn Allah es will",
+          "explanation": "Dieses Dua wird beim Fastenbrechen im Ramadan rezitiert",
+          "benefits": "Segen des Fastens, Dankbarkeit, spirituelle Belohnung"
+        },
+        "ur": {
+          "title": "روزہ افطار کی دعا",
+          "transliteration": "ذہب الظما وابتلت العروق وثبت الاجر ان شاء اللہ",
+          "translation": "پیاس چلی گئی، رگیں تر ہو گئیں، اور اجر ثابت ہو گیا، اللہ چاہے تو",
+          "explanation": "یہ دعا رمضان میں روزہ افطار کرتے وقت پڑھی جاتی ہے",
+          "benefits": "روزے کی برکتیں، شکرگزاری، روحانی اجر"
+        },
+        "es": {
+          "title": "Dua para romper el ayuno",
+          "transliteration": "Dhahabadh dhama'u wabtallatil 'urooqu, wa thabatal ajru inshaa Allaah",
+          "translation": "La sed se ha ido, las venas están humedecidas, y la recompensa está confirmada, si Alá quiere",
+          "explanation": "Este dua se recita al romper el ayuno durante el Ramadán",
+          "benefits": "Bendiciones del ayuno, gratitud, recompensa espiritual"
+        },
+        "id": {
+          "title": "Doa untuk berbuka puasa",
+          "transliteration": "Dhahabadh dhama'u wabtallatil 'urooqu, wa thabatal ajru inshaa Allaah",
+          "translation": "Haus telah hilang, pembuluh darah telah dibasahi, dan pahala telah dikonfirmasi, jika Allah menghendaki",
+          "explanation": "Doa ini dibaca saat berbuka puasa selama Ramadhan",
+          "benefits": "Berkah puasa, syukur, pahala spiritual"
+        }
+      }
+    },
+    {
+      "id": "dua_012",
+      "type": "hadith",
+      "category_slug": "family",
+      "priority": 1,
+      "tags": [
+        "family",
+        "children",
+        "blessing"
+      ],
+      "arabic_text": "رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً إِنَّكَ سَمِيعُ الدُّعَاءِ",
+      "reciter": "Abdul Rahman Al-Sudais",
+      "audio_duration": "00:00:25",
+      "audio_url": "https://api.example.com/audio/dua_012.mp3",
+      "quran_surah": null,
+      "quran_ayah": null,
+      "quran_juz": null,
+      "hadith_book": "Quran",
+      "hadith_chapter": "Al-Imran",
+      "hadith_number": "3:38",
+      "source": "",
+      "when_to_recite": [
+        "For children",
+        "Family planning",
+        "Seeking offspring"
+      ],
+      "frequency": "occasional",
+      "difficulty": "beginner",
+      "estimated_time": "00:00:30",
+      "related_duas": [],
+      "notes": "Beautiful dua for seeking blessed children",
+      "status": "published",
+      "translations": {
+        "en": {
+          "title": "Dua for Children",
+          "transliteration": "Rabbi hab li min ladunka dhurriyyatan tayyibah, innaka samee'ud-du'aa",
+          "translation": "My Lord, grant me from Yourself a good offspring. Indeed, You are the Hearer of supplication",
+          "explanation": "This dua is recited to seek blessed and righteous children",
+          "benefits": "Blessed children, family harmony, divine favor"
+        },
+        "bn": {
+          "title": "সন্তানের দুআ",
+          "transliteration": "রাব্বি হাব লি মিন লাদুনকা ধুররিয়্যাতান তাইয়্যিবাহ, ইন্নাকা সামীউদ দুআ",
+          "translation": "হে আমার প্রভু, আমাকে আপনার কাছ থেকে উত্তম সন্তান দিন। নিশ্চয় আপনি প্রার্থনা শ্রবণকারী",
+          "explanation": "এই দুআটি আশীর্বাদপূর্ণ এবং ধার্মিক সন্তান কামনা করার জন্য পাঠ করা হয়",
+          "benefits": "আশীর্বাদপূর্ণ সন্তান, পারিবারিক সাদৃশ্য, ঐশ্বরিক অনুগ্রহ"
+        },
+        "ar": {
+          "title": "دعاء للأطفال",
+          "transliteration": "رَبِّ هَبْ لِي مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً إِنَّكَ سَمِيعُ الدُّعَاءِ",
+          "translation": "ربي هب لي من لدنك ذرية طيبة إنك سميع الدعاء",
+          "explanation": "يُقرأ هذا الدعاء لطلب أطفال مباركين وصالحين",
+          "benefits": "الأطفال المباركون، الانسجام الأسري، النعمة الإلهية"
+        },
+        "de": {
+          "title": "Dua für Kinder",
+          "transliteration": "Rabbi hab li min ladunka dhurriyyatan tayyibah, innaka samee'ud-du'aa",
+          "translation": "Mein Herr, gewähre mir von Dir eine gute Nachkommenschaft. Du bist der Hörende der Bitte",
+          "explanation": "Dieses Dua wird rezitiert, um gesegnete und rechtschaffene Kinder zu erbitten",
+          "benefits": "Gesegnete Kinder, familiäre Harmonie, göttliche Gunst"
+        },
+        "ur": {
+          "title": "بچوں کی دعا",
+          "transliteration": "رب ہب لی من لدنک ذریۃ طیبۃ انک سمیع الدعا",
+          "translation": "اے میرے رب! مجھے اپنی طرف سے اچھی اولاد عطا فرما۔ بے شک آپ دعا سننے والے ہیں",
+          "explanation": "یہ دعا مبارک اور نیک بچوں کے لیے پڑھی جاتی ہے",
+          "benefits": "مبارک بچے، خاندانی ہم آہنگی، الہی فضل"
+        },
+        "es": {
+          "title": "Dua para niños",
+          "transliteration": "Rabbi hab li min ladunka dhurriyyatan tayyibah, innaka samee'ud-du'aa",
+          "translation": "Mi Señor, concédeme de Ti una buena descendencia. En verdad, Tú eres el Oyente de la súplica",
+          "explanation": "Este dua se recita para pedir hijos bendecidos y rectos",
+          "benefits": "Hijos bendecidos, armonía familiar, favor divino"
+        },
+        "id": {
+          "title": "Doa untuk anak-anak",
+          "transliteration": "Rabbi hab li min ladunka dhurriyyatan tayyibah, innaka samee'ud-du'aa",
+          "translation": "Ya Tuhanku, berikanlah kepadaku keturunan yang baik dari sisi-Mu. Sesungguhnya Engkau Maha Mendengar doa",
+          "explanation": "Doa ini dibaca untuk memohon anak-anak yang diberkati dan saleh",
+          "benefits": "Anak-anak yang diberkati, keharmonisan keluarga, karunia ilahi"
+        }
+      }
+    }
+  ],
+  "ads": [
+    {
+      "id": "1",
+      "title": "Premium Features",
+      "text": "Unlock unlimited duas and ad-free experience",
+      "action_text": "Upgrade Now",
+      "action_color": "#2c5530",
+      "text_color": "#495057",
+      "title_color": "#2c5530",
+      "link": "https://google.com",
+      "icon_name": "star",
+      "icon_color": "#2c5530",
+      "is_active": false,
+      "priority": 1
+    },
+    {
+      "id": "2",
+      "title": "Daily Reminders",
+      "text": "Never miss your prayers with smart notifications",
+      "action_text": "Set Reminder",
+      "action_color": "#28a745",
+      "text_color": "#495057",
+      "title_color": "#28a745",
+      "link": "https://google.com",
+      "icon_name": "notifications",
+      "icon_color": "#28a745",
+      "is_active": true,
+      "priority": 2
+    },
+    {
+      "id": "3",
+      "title": "Share with Friends",
+      "text": "Spread the blessings of dua and zikr",
+      "action_text": "Share App",
+      "action_color": "#007bff",
+      "text_color": "#495057",
+      "title_color": "#007bff",
+      "link": "https://google.com",
+      "icon_name": "share-social",
+      "icon_color": "#007bff",
+      "is_active": true,
+      "priority": 3
+    },
+    {
+      "id": "4",
+      "title": "Quran Recitation",
+      "text": "Listen to beautiful Quran recitations daily",
+      "action_text": "Listen Now",
+      "action_color": "#6f42c1",
+      "text_color": "#495057",
+      "title_color": "#6f42c1",
+      "link": "https://google.com",
+      "icon_name": "book",
+      "icon_color": "#6f42c1",
+      "is_active": true,
+      "priority": 4
+    },
+    {
+      "id": "5",
+      "title": "Islamic Calendar",
+      "text": "Stay updated with Islamic dates and events",
+      "action_text": "View Calendar",
+      "action_color": "#fd7e14",
+      "text_color": "#495057",
+      "title_color": "#fd7e14",
+      "link": "https://google.com",
+      "icon_name": "calendar",
+      "icon_color": "#fd7e14",
+      "is_active": true,
+      "priority": 5
+    },
+    {
+      "id": "6",
+      "title": "Prayer Times",
+      "text": "Get accurate prayer times for your location",
+      "action_text": "Check Times",
+      "action_color": "#17a2b8",
+      "text_color": "#495057",
+      "title_color": "#17a2b8",
+      "link": "https://google.com",
+      "icon_name": "moon",
+      "icon_color": "#17a2b8",
+      "is_active": true,
+      "priority": 6
+    },
+    {
+      "id": "7",
+      "title": "Daily Progress",
+      "text": "Track your spiritual journey and growth",
+      "action_text": "View Progress",
+      "action_color": "#20c997",
+      "text_color": "#495057",
+      "title_color": "#20c997",
+      "link": "https://google.com",
+      "icon_name": "trending-up",
+      "icon_color": "#20c997",
+      "is_active": true,
+      "priority": 7
+    },
+    {
+      "id": "8",
+      "title": "Community",
+      "text": "Connect with fellow believers worldwide",
+      "action_text": "Join Community",
+      "action_color": "#e83e8c",
+      "text_color": "#495057",
+      "title_color": "#e83e8c",
+      "link": "https://google.com",
+      "icon_name": "people",
+      "icon_color": "#e83e8c",
+      "is_active": true,
+      "priority": 8
+    }
+  ]
+}
