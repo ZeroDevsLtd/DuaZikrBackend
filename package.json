@@ -16,7 +16,8 @@
     "db:seed": "tsx src/seed.ts",
     "db:setup": "tsx src/migrate.ts && tsx src/seed.ts",
     "seed:build": "tsx scripts/build-seed.ts",
-    "smoke": "tsx scripts/smoke-test.ts"
+    "smoke": "tsx scripts/smoke-test.ts",
+    "db:export": "bash scripts/export-content.sh"
   },
   "dependencies": {
     "@fastify/cookie": "11.1.3",

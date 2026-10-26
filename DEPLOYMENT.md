@@ -21,9 +21,13 @@ On the server, as root (the repo is private, so the server needs a GitHub deploy
 ```bash
 git clone https://github.com/ZeroDevsLtd/DuaZikrBackend.git /opt/duazikr-api
 bash /opt/duazikr-api/deploy/server-setup.sh api.example.com you@example.com
-bash /opt/duazikr-api/deploy/update-on-server.sh --seed      # first release
+bash /opt/duazikr-api/deploy/update-on-server.sh --import    # first release: loads db/data/content.sql
 bash /opt/duazikr-api/deploy/update-on-server.sh             # every later release (git pull + build + restart)
 ```
+
+`db/data/content.sql` is an exact copy of the content (categories, duas, translations, ads) from the
+database it was exported from. Refresh it with `npm run db:export`, commit and push. Importing it
+**replaces** the server's content, so only use `--import` for the first release (or on purpose).
 
 Then continue with step 4 below. Option B (steps 2–3) uploads from a computer with rsync instead.
 
